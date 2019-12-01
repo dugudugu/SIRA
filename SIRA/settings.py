@@ -78,11 +78,10 @@ WSGI_APPLICATION = 'SIRA.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 if "DATABASE_URL" in os.environ:
-    DATABASES = {
-        'default' : dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+    DATABASES = {'default' : dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 else:
     print("Postgres URL not found, using sqlite instead")
-     DATABASES = {
+    DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
