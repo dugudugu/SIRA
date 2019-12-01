@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dugudugu/SIRA.svg?branch=master)](https://travis-ci.org/dugudugu/SIRA) 
+ 
          ___        ______     ____ _                 _  ___  
         / \ \      / / ___|   / ___| | ___  _   _  __| |/ _ \ 
        / _ \ \ /\ / /\___ \  | |   | |/ _ \| | | |/ _` | (_) |
