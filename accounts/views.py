@@ -10,4 +10,7 @@ def index(request):
 # View to log user out
 def logout(request):
     auth.logout(request)
+    message.success(request, "You have been Logged Out!")
     return redirect(reverse('index'))
+    
+    

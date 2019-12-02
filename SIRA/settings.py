@@ -149,3 +149,5 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 
 STATIC_URL = '/static/'
+
+MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
