@@ -1,0 +1,106 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>SIRA | Stichting I Rescpect Animals</title>
+    <link rel="icon" href="#" type="image/x-icon"/ >
+    
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Patua+One|Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script async src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script async type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+    
+    
+    <style>
+        .navbar {background-color: #1C77C3; height: 100px;}
+        .navbar-brand {height: 100%;}
+        .navbrand {position: absolute; left: 50%; margin-left: -100px; margin-top: 0; padding: 0; height: 100%; display: flex; align-items: center;}
+        .navbar-logo {width: 200px; max-height: none;}
+        .navbar-menu {background-color: #1C77C3;}
+        .navbar-item {margin: auto 60px;}
+    </style>
+    
+</head>
+<body>
+    <!------------------------------ Navigation Bar ------------------------->
+    <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbrand" href="#">
+                <img class="navbar-logo" src="#" alt="SIRA-logo">
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="#">Home</a>
+                <a class="navbar-item" href="#">About Us</a>
+                <a class="navbar-item" href="#">Get Involved</a>
+            </div>
+            <div class="navbar-end">
+                <a class="navbar-item" href="#">Adopt</a>
+                <a class="navbar-item" href="#">Happy Endings</a>
+                <a class="navbar-item" href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    {% block content %} {% endblock %}
+    
+    <!------------------------------ Footer ------------------------->
+    <footer class="footer">
+      <div class="content has-text-centered">
+          <ul class="content has-text-centered">
+              <li><a href"#"><i class="fab fa-facebook"></i>Facebook</a><</li>
+              <li><a href"#"><i class="fab fa-facebook"></i>Facebook</a><</li>
+              <li><a href"#"><i class="fab fa-facebook"></i>Facebook</a><</li>
+          </ul>
+        <div class="colums is-mobile is-multiline">
+            <div class="column is-half-mobile is-one-third-desktop">
+                <h6 class="title is-5">About Us</h6>
+                <p>About us short informtaion section</p>
+            </div>
+            <div class="column is-half-mobile is-one-third-desktop">
+                <h6 class="title is-5">Our loacation:</h6>
+                <address>
+                    <strong>Stichting I Respect Animals</strong>
+                    <i class="fas fa-envelope"></i><a href="mailto:adoptie.sira@gmail.com">adopties.sira@gmail.com</a>
+                </address>
+            </div>
+            <div class="column is-half-mobile is-one-third-desktop">
+                <h6 class="title is-5">Get Emails from SIRA</h6>
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" placeholder="e.g Alex Smith">
+                        <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+                        <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <button class="button is-success">Sign Up!</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <p class="content has-text-centered">
+            <strong>&copy; 2019 SIRA</strong> by <a href="#">Cindy Marchena</a> | For Educational Purposes Only | All Rights Reserved
+        </p>
+    </footer>
+    
+</body>
+</html>

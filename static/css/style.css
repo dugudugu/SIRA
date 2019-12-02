@@ -1,0 +1,35 @@
+@media screen and (min-width:768px){
+    .navbar-brand-centered {
+        position: absolute;
+        left: 50%;
+        display: block;
+        width: 160px;
+        text-align: center;
+        background-color: #eee;
+    }
+    .navbar>.container .navbar-brand-centered, 
+    .navbar>.container-fluid .navbar-brand-centered {
+        margin-left: -80px;
+    }
+}
+
+a.navbar-item {
+  color: #FAFAFF;
+  text-align: center;
+}
+
+a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:hover, .navbar-link.is-active {
+    background-color: transparent;
+    color: #A399FF;
+}
+
+@media screen and (min-width: 1088px) {
+  .navbar-start {
+    margin-left: auto;
+    margin-right: 150px;
+  }
+  .navbar-end {
+    margin-right: auto;
+    margin-left: 150px;
+  }
+}
