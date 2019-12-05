@@ -1,6 +1,7 @@
 :root{
   --main-color: #1190CB;
   --color-white: #fff;
+  --color-transperant-orange: rgba(205, 76, 17, 0.8);
 }
 
 /*     Help section custom styling     */
@@ -33,15 +34,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
 /*     About section custom styling     */
 .about-us {
   height: 100vh;
@@ -49,6 +41,15 @@
 
 .about-us-text {
   margin-right: 3.2rem;
+}
+
+/*     Happy Ending Counter section custom styling     */
+.happy-endings-section {
+  background-color: var(--color-transperant-orange);
+}
+
+.happy-ending-svg {
+  fill: var(--color-white);
 }
 
 
