@@ -10,28 +10,12 @@
   margin: 10rem 0rem;
 }
 
-.help-title {
-  font-size: 3rem;
-  font-weight: 600;
-  color: var(--color-white);
-  margin-bottom: 5rem;
-  line-height: 1.125;
-}
-
 .help-adopt-svg, .help-foster-svg, .help-donate-svg, .help-volunteer-svg {
   fill: var(--color-white);
   height: 128px;
   width: 128px;
 }
 
-.help-sub-title {
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--color-white);
-  margin-bottom: 5rem;
-  line-height: 1.125;
-  text-transform: uppercase;
-}
 
 
 /*     About section custom styling     */
