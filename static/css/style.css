@@ -7,7 +7,7 @@
 /*     Help section custom styling     */
 .help-section {
   background-color: var(--main-color);
-  margin: 10rem 0rem;
+  margin: 5rem 0rem;
 }
 
 .help-adopt-svg, .help-foster-svg, .help-donate-svg, .help-volunteer-svg {
@@ -15,8 +15,6 @@
   height: 128px;
   width: 128px;
 }
-
-
 
 /*     About section custom styling     */
 .about-us {
@@ -30,6 +28,7 @@
 /*     Happy Ending Counter section custom styling     */
 .happy-endings-section {
   background-color: var(--color-transperant-orange);
+  margin: 5rem 0rem;
 }
 
 .happy-ending-svg {
