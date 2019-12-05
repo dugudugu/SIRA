@@ -13,16 +13,21 @@
     <link rel="stylesheet" href="static/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script async type="text/javascript" src="#"></script>
+    
+    
+    
     
     
     <style>
+        body {font-family: roboto;}
         .navbar {height: 125px;}
         .navbar-brand {height: 100%;}
         .navbrand {position: absolute; left: 50%; margin-left: -100px; margin-top: 0; padding: 0; height: 100%; display: flex; align-items: center;}
         .navbar-logo {width: 100px; height: 100px; align-self: center;}
         .navbar-item {margin: auto 60px;}
+        a.navbar-item {color: #000; font-weight: 600; font-family: Courgette; cursor: url('static/icons/animal-paw-print.png'), auto;}
         
+        .image img {display: block; height: 90vh; width: 100vw;}
         
         .footer .buttons {justify-content: center;}
         .footer .control-button {text-align: center;}
@@ -47,22 +52,25 @@
             
             <div id="navMenu" class="navbar-menu">
                 <div class="navbar-start">
-                    <a class="navbar-item" href="#">Home</a>
-                    <a class="navbar-item" href="#">About Us</a>
-                    <a class="navbar-item" href="#">Get Involved</a>
+                    <a class="navbar-item is-size-5" href="#">Home</a>
+                    <a class="navbar-item is-size-5" href="#">About Us</a>
+                    <a class="navbar-item is-size-5" href="#">Get Involved</a>
                 </div>
                 <div class="navbar-end">
-                    <a class="navbar-item" href="#">Adopt</a>
-                    <a class="navbar-item" href="#">Happy Endings</a>
-                    <a class="navbar-item" href="#">Contact</a>
+                    <a class="navbar-item is-size-5" href="#">Adopt</a>
+                    <a class="navbar-item is-size-5" href="#">Happy Endings</a>
+                    <a class="navbar-item is-size-5" href="#">Contact</a>
                 </div>
             </div>
     </nav>
     
-
+    <div class="image">
+    {% block hero-image %}{% endblock %}
+    </div>
     
     {% block content %}{% endblock %}
     {% block login %}{% endblock %}
+    {% block homepage %}{% endblock %}
     
     
     
@@ -120,16 +128,11 @@
     </p>
 </footer>
     
-    <script type="text/javascript">
-        (function() {
-            var burger = document.querySelector('.burger');
-            var nav = document.querySelector('#' + burger.dataset.target);
-            burger.addEventListener('click', function() {
-                burger.classList.toggle('is-active');
-                nav.classList.toggle('is-active');
-            });
-        })();
-    </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+<script async type="text/javascript" src="static/js/custom.js"></script>
+<script async type="text/javascript" src="static/js/custom-jquery.js"></script>
     
 </body>
 </html>
