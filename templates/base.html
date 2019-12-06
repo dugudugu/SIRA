@@ -1,4 +1,4 @@
-
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +42,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <a class="navbrand" href="#">
-                    <img class="navbar-logo" src="https://res.cloudinary.com/dbnahdjbc/image/upload/v1575313928/logo_kganfk.png" alt="SIRA-logo">
+                    <img class="navbar-logo" src="{% static 'images/logo.jpg' %}" alt="SIRA-logo">
                 </a>
                 <span role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
                     <span aria-hidden="true"></span>
@@ -73,7 +73,7 @@
     {% block login %}{% endblock %}
     {% block homepage %}{% endblock %}
     {% block sira_team %}{% endblock %}
-    
+    {% block why_spain %}{% endblock %}
     
     
     
@@ -98,8 +98,8 @@
             <div class="columns has-text-centered">
                 <div class="column has-text-centered">
                     <div class="buttons" data-config-id="icons">
-                        <a class="button footer-buttons" href="#"><img src="static/svg/facebook-f.svg" alt=""></a>
-                        <a class="button footer-buttons" href="#"><img src="static/svg/instagram.svg" alt=""></a>
+                        <a class="button footer-buttons" href="#"><img src="{% static 'svf/facebook-f.svg' %}" alt=""></a>
+                        <a class="button footer-buttons" href="#"><img src="{% static 'svg/instagram.svg' %}" alt=""></a>
                     </div>
                 </div>
             </div>
