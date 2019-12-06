@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static from staticfiles %}
 {% block page_title %}Meet the Team{% endblock %}
 
 {% block hero-image %}{% endblock %}
@@ -19,7 +19,7 @@
                 <div class="column is-4">
                     <div class="level">
                         <div class="level-item">
-                            <figure class="image is-128x128"><img class="is-rounded" src="static/images/girl.png" alt="picture of Sandra"></figure>
+                            <figure class="image is-128x128"><img class="is-rounded" src="{% static 'images/user.png' %}" alt="picture of Sandra"></figure>
                         </div>
                     </div>
                     <h5 class="title is-5">Sandra</h5>
@@ -29,7 +29,7 @@
                 <div class="column is-4">
                     <div class="level">
                         <div class="level-item">
-                            <figure class="image is-128x128"><img class="is-rounded" src="static/images/girl.png" alt="picture of Paula"></figure>
+                            <figure class="image is-128x128"><img class="is-rounded" src="{% static 'images/user.png' %}" alt="picture of Paula"></figure>
                         </div>
                     </div>
                     <h5 class="title is-5">Paula</h5>
@@ -39,7 +39,7 @@
                 <div class="column is-4">
                     <div class="level">
                         <div class="level-item">
-                            <figure class="image is-128x128"><img class="is-rounded" src="static/images/girl.png" alt="picture of Karin"></figure>
+                            <figure class="image is-128x128"><img class="is-rounded" src="{% static 'images/user.png' %}" alt="picture of Karin"></figure>
                         </div>
                     </div>
                     <h5 class="title is-5">Karin</h5>
