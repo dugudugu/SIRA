@@ -17,10 +17,12 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from home_page.views import homepage
 from about import urls
+from get_involved import urls
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', homepage),
-    url(r'^about/', include('about.urls')), 
+    url(r'^about/', include('about.urls')),
+    url(r'^get_involved/', include('get_involved.urls')),
 ]
