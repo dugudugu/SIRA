@@ -7,3 +7,7 @@
     nav.classList.toggle('is-active');
   });
 })();
+
+
+// Function for the accordion FAQS
+var accordions = bulmaAccordion.attach();
