@@ -9,5 +9,4 @@
 })();
 
 
-// Function for the accordion FAQS
-var accordions = bulmaAccordion.attach();
+
