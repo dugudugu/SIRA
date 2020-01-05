@@ -5,15 +5,14 @@
 }
 
 /*     Help section custom styling     */
-.help-section {
+.help-section, .adoption {
   background-color: var(--main-color);
-  margin: 5rem 0rem;
+  margin: 3rem 0rem;
+  padding: 2rem 0rem;
 }
 
-.help-adopt-svg, .help-foster-svg, .help-donate-svg, .help-volunteer-svg {
+.white-svg{
   fill: var(--color-white);
-  height: 128px;
-  width: 128px;
 }
 
 /*     About section custom styling     */
@@ -28,12 +27,15 @@
 /*     Happy Ending Counter section custom styling     */
 .happy-endings-section {
   background-color: var(--color-transperant-orange);
-  margin: 5rem 0rem;
+  margin: 3rem 0rem;
+  padding: 2rem 0rem;
 }
 
-.happy-ending-svg {
-  fill: var(--color-white);
+.adoption-steps {
+  margin: 5rem 30rem;
 }
+
+
 
 
 
