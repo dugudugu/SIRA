@@ -11,3 +11,7 @@ def volunteer(request):
 # Render view for FAQs page
 def faqs(request):
     return render(request, "faqs.html")
+    
+# Render view for adoption guide page
+def guide(request):
+    return render(request, "adoption-guide.html")    
