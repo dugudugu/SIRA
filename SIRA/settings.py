@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'about',
     'get_involved',
     'storages',
+    'adoptables',
 ]
 
 MIDDLEWARE = [
