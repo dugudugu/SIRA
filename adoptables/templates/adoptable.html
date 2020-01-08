@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block page_title %}All dogs{% endblock %}
+
+{% block content %}
+<div class="container is-fluid" id="content">
+
+    <section data-section-id="3" data-component-id="15a7_13_01_awz" data-category="all dogs" class="section">
+        <div class="container">
+            <h2 class="title has-text-centered" data-config-id="header">Dogs</h2>
+            <h5 class="subtitle has-text-centered">Showing 1234563 to 1234654 of 132416 dogs</h5>
+
+            <!-------- Card to view all dogs -->
+            <div class="colums">
+                <div class="column is-4">
+                    {% for dog in dogs %}
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="dog-image image" style="background-image: url('{{ MEDIA_URL }}{{ dog.dog_image1.url }}')"></figure>
+                        </div>
+                        <div class="card-content has-text-centered">
+                            {% if dog.status == True %}
+                            <button class="button is-success is-rounded"><span class="icon is-small"><i class="fas fa-heart"></i></span><span>for adoption</span></button> 
+                            {% elif dog.status == False %}
+                            <button class="button is-danger is-rounded"><span class="icon is-small"><i class="fas fa-heart"></i></span><span>adopted</span></button> 
+                            {% endif %}
+
+                            <h1 class="title is-3 has-text-centered"></h1>
+                            <p>{{ dog.age }}</p>
+                            <p>{{ dog.breed }}</p>
+                            <p>{{ dog.sex }}</p>
+
+                            <a class="button is-primary" href="#">Read more</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            </div>
+    </section>
+</div>
+
+
+{% endblock %}

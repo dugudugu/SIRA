@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block page_title %}Adoptable{% endblock %}
+
+{% block content %}
+
+
+<div class="container is-fluid" id="content">
+
+<section data-section-id="1" data-component-id="15a7_14_02_awz" data-category="dog listing" class="section">
+  <div class="container">
+    <div class="columns is-desktop is-vcentered">
+        {% for dog in adoptables %}
+      <div class="column is-6-desktop">
+        <h2 class="title" data-config-id="header">{% dog.name %}</h2>
+        
+        {% if dog.status == True %}
+        <button class="button is-success is-rounded"><span class="icon is-small"><i class="fas fa-heart"></i>"></span><span>for adoption</span></button> 
+        {% elif dog.status == False %}
+        <button class="button is-danger is-rounded"><span class="icon is-small"><i class="fas fa-heart"></i>"></span><span>adopted</span></button> 
+        {{% endif%}
+        <hr>
+        
+        <p>{% dog.description %}</p>
+        <hr>
+        
+        <div class="colums">
+            <div class="column">
+                <p><span>Date of birth:</span>{% dog.date_of_birth %}</p>
+                <p><span>Sex:</span>{% dog.sex %}</p>
+                <p><span>Age:</span>{% dog.age %}</p>
+                <p><span>From:</span>{% dog.in_shelter_from %}</p>
+            </div>
+            <div class="column">
+                <p><span>Breed:</span>{% dog.breed %}</p>
+                <p><span>Size:</span>{% dog.size %}</p>
+                <p><span>Location</span>{% dog.location %}</p>
+                <p><span>Situation:</span>{% dog.situation %}</p>
+            </div>
+        </div>
+        
+        <button class="button is-info" data-config-id="primary-action">Contact Us!</button>
+        
+      </div>
+      <div class="column is-6-desktop"><img src="url('{{ MEDIA_URL }}{{ dog.dog_image1 }}')" alt="Main dog image" data-config-id="image">
+        <div class="level is-mobile" data-config-id="images">
+          <div class="level-item"><img src="url('{{ MEDIA_URL }}{{ dog.dog_image1 }}')" alt="Additional dog images"></div>
+          <div class="level-item"><img src="url('{{ MEDIA_URL }}{{ dog.dog_image1 }}')" alt="Additional dog images"></div>
+          <div class="level-item"><img src="url('{{ MEDIA_URL }}{{ dog.dog_image1 }}')" alt="Additional dog images"></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+</div>
+
+
+{% endblock %}

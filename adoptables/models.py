@@ -11,10 +11,17 @@ class Adoptable(models.Model):
     MALE_DOG = 'Male'
     sex = [(FEMALE_DOG, 'Female'), (MALE_DOG, 'Male')]
     
-    ADOPTED = 'Adopted'
-    NOT_ADOPTED = 'For Adoption'
-    Satus = [(ADOPTED, 'Adopted'), (NOT_ADOPTED, 'For Adoption')]
+    SMALL = 'Small'
+    MEDIUM = 'Medium'
+    LARGE = 'Large'
+    size =[(SMALL, 'Small'), (MEDIUM, 'Medium'), (LARGE, 'Large')]
     
+    ADOPTED = 'Adopted'
+    FOSTERED = 'Fostered'
+    SHELTER = 'Shelter'
+    situation = [(ADOPTED, 'Adopted'), (FOSTERED, 'Fostered'), (SHELTER, 'Shelter')]
+    
+    status = models.BooleanField(verbose_name='For adoption', default=True)
     date_of_birth = models.CharField(max_length=100, default='unknown')
     in_shelter_from = models.CharField(max_length=100, default='')
     location = models.CharField(max_length=100, default='')
