@@ -38,8 +38,9 @@
 .dog-image {
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center center;
   height: 250px;
-  width: 100%;
+  width: 300px;
   margin: 0 auto;
   
 }

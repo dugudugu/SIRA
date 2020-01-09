@@ -12,7 +12,7 @@
 
             <!-------- Card to view all dogs -->
             <div class="colums">
-                <div class="column is-4">
+                <div class="column is-3">
                     {% for dog in dogs %}
                     <div class="card">
                         <div class="card-image">
@@ -25,7 +25,7 @@
                             <button class="button is-danger is-rounded"><span class="icon is-small"><i class="fas fa-heart"></i></span><span>adopted</span></button> 
                             {% endif %}
 
-                            <h1 class="title is-3 has-text-centered"></h1>
+                            <h1 class="title is-3 has-text-centered">{{ dog.name }}</h1>
                             <p>{{ dog.age }}</p>
                             <p>{{ dog.breed }}</p>
                             <p>{{ dog.sex }}</p>
