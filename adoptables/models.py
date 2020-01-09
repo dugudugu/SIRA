@@ -7,9 +7,7 @@ class Adoptable(models.Model):
     age = models.CharField(max_length=100, default='unknown')
     breed = models.CharField(max_length=100, default='mix breed')
     
-    FEMALE_DOG = 'Female'
-    MALE_DOG = 'Male'
-    sex = [(FEMALE_DOG, 'Female'), (MALE_DOG, 'Male')]
+    sex = models.CharField(max_length=100, default='')
     
     SMALL = 'Small'
     MEDIUM = 'Medium'
