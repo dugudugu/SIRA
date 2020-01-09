@@ -30,7 +30,7 @@
                             <p>{{ dog.breed }}</p>
                             <p>{{ dog.sex }}</p>
 
-                            <a class="button is-primary" href="#">Read more</a>
+                            <a class="button is-primary" href="{{ dog.get_absolute_url }}">Read more</a>
                         </div>
                     </div>
                     {% endfor %}
@@ -42,3 +42,4 @@
 
 
 {% endblock %}
+

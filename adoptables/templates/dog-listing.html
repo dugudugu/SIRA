@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block page_title %}Adoptable{% endblock %}
+{% block page_title %}{{ post.name }}{% endblock %}
 
 {% block content %}
 
@@ -10,41 +10,41 @@
 <section data-section-id="1" data-component-id="15a7_14_02_awz" data-category="dog listing" class="section">
   <div class="container">
     <div class="columns is-desktop is-vcentered">
-        {% for dog in adoptables %}
+        {% for dog in post %}
       <div class="column is-6-desktop">
-        <h2 class="title" data-config-id="header">{% dog.name %}</h2>
+        <h2 class="title" data-config-id="header">{% post.name %}</h2>
         
-        {% if dog.status == True %}
+        {% if post.status == True %}
         <button class="button is-success is-rounded"><span class="icon is-small"><i class="fas fa-heart"></i>"></span><span>for adoption</span></button> 
-        {% elif dog.status == False %}
+        {% elif post.status == False %}
         <button class="button is-danger is-rounded"><span class="icon is-small"><i class="fas fa-heart"></i>"></span><span>adopted</span></button> 
         {{% endif%}
         <hr>
         
-        <p>{% dog.description %}</p>
+        <p>{% post.description %}</p>
         <hr>
         
         <div class="colums">
             <div class="column">
-                <p><span>Date of birth:</span>{% dog.date_of_birth %}</p>
-                <p><span>Sex:</span>{% dog.sex %}</p>
-                <p><span>Age:</span>{% dog.age %}</p>
-                <p><span>From:</span>{% dog.in_shelter_from %}</p>
+                <p><span>Date of birth:</span>{% post.date_of_birth %}</p>
+                <p><span>Sex:</span>{% post.sex %}</p>
+                <p><span>Age:</span>{% post.age %}</p>
+                <p><span>From:</span>{% post.in_shelter_from %}</p>
             </div>
             <div class="column">
-                <p><span>Breed:</span>{% dog.breed %}</p>
-                <p><span>Size:</span>{% dog.size %}</p>
-                <p><span>Location</span>{% dog.location %}</p>
-                <p><span>Situation:</span>{% dog.situation %}</p>
+                <p><span>Breed:</span>{% post.breed %}</p>
+                <p><span>Size:</span>{% post.size %}</p>
+                <p><span>Location</span>{% post.location %}</p>
+                <p><span>Situation:</span>{% post.situation %}</p>
             </div>
         </div>
         
         <button class="button is-info" data-config-id="primary-action">Contact Us!</button>
         
       </div>
-      <div class="column is-6-desktop"><img src="url('{{ MEDIA_URL }}{{ dog.dog_image1 }}')" alt="Main dog image" data-config-id="image">
+      <div class="column is-6-desktop"><img src="url('{{ MEDIA_URL }}{{ post.dog_image1 }}')" alt="Main dog image" data-config-id="image">
         <div class="level is-mobile" data-config-id="images">
-          <div class="level-item"><img src="url('{{ MEDIA_URL }}{{ dog.dog_image1 }}')" alt="Additional dog images"></div>
+          <div class="level-item"><img src="url('{{ MEDIA_URL }}{{ post.dog_image1 }}')" alt="Additional dog images"></div>
           <div class="level-item"><img src="url('{{ MEDIA_URL }}{{ dog.dog_image1 }}')" alt="Additional dog images"></div>
           <div class="level-item"><img src="url('{{ MEDIA_URL }}{{ dog.dog_image1 }}')" alt="Additional dog images"></div>
         </div>
