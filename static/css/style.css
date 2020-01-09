@@ -35,6 +35,14 @@
   margin: 5rem 30rem;
 }
 
+.dog-image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 250px;
+  width: 100%;
+  margin: 0 auto;
+  
+}
 
 
 
