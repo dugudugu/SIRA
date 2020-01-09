@@ -1,49 +1,53 @@
 {% extends 'base.html' %}
-{% load static from staticfiles %}
+{% load staticfiles %}
 {% block page_title %}Why Spainish Dogs{% endblock %}
 
-{% block hero-image %}{% endblock %}
+{% block hero-image %}<img src="{% static 'images/dog-image3.jpg' %}"></img>{% endblock %}
 
+{% block content %}
 
-{% block why_spain %}
 <div class="container is-fluid" id="content">
 
-<!------------------------ Why Spain Section ----------------->             
-<section data-section-id="2" data-component-id="15a7_19_02_awz" data-category="content" class="section">
-  <div class="container has-text-centered">
-    <p data-config-id="description">People often ask, <span class="is-italic has-text-weight-semibold">"Why should anyone care about the dogs in Spain, when so many dogs in the Netherlands need homes too?"</span></p><br>
-    
-    <p data-config-id="description">We tell them this: <span class="is-italic has-text-weight-semibold">"Because in Spain stray animal have a small percentage of being in a forever home".</span>In Spain dogs are abandon after they have done there jobs as; hunters, puppy factory or dog fighting. Some stray dogs also have the bad luck that there family don't want them anymore, so they get dumped on the side of the road.</p><br>
-    
-    <p data-config-id="description">There aren't rescue and cruelty prevention groups such as those in the Netherlands to serve as advocates for these sweet pups. Spanish strays are kicked, beaten, ran over by cars, and left for dead. They wander the streets searching for food, most of them skeletal. And if these dogs have figured out hoe cruel people can be, they stay in deserted areas, searching for whatever bits of food they can find, shuddering and running away from any person that tries to come near them.</p><br>
-   
-    <p data-config-id="description">And if they do have the chance of being in a home, many of them are attached to a three-foot chain, next to a dog house that is way too small, that they can barely reach because of how they are chained. They are covered in mud, and left there to watch the cars fly by them every day...day in, and day out. No feeling of love or warmth from their master</p><br>
-    
-    <p data-config-id="description">We can sum up the sentiment in Spain in one analogy: If you see a dog walking the streets in the Netherlands, your first thought is usually <span class="is-italic has-text-weight-semibold">“Oh no, someone’s dog got out!”</span>  Whereas in Spain, it’s <span class="is-italic has-text-weight-semibold">“Oh look, another forgotten, stray dog...with no place to call home... maybe we should call the dog catcher and get rid of it.”</span></p><br>
-    
-    <p data-config-id="description">We know there are dogs all over the world, even in the Netherlands, who need help, but it’s just the strays of Spain need a few more advocates on their side.</p><br>
-    
-    <p data-config-id="description"><span class="title is-5">Will you help us?</span></p>
-  </div>
-</section>
+  <!------------------------ Why Spain Section ----------------->
+  <section data-section-id="2" data-component-id="15a7_19_02_awz" data-category="content" class="section">
+    <div class="container has-text-centered">
+      <p data-config-id="description">People often ask, <span class="is-italic has-text-weight-semibold">"Why should anyone care about the dogs in Spain, when so many dogs in the Netherlands need homes too?"</span></p><br>
 
-<!------------------------ Gallery of Rescue Dogs in Spain ----------------->             
-<section data-section-id="1" data-component-id="15a7_17_02_awz" data-category="gallery" class="section">
-  <div class="container">
-    <h2 class="title has-text-centered" data-config-id="header">Gallery</h2>
-    <div class="columns is-multiline" data-config-id="gallery_02">
-      
-      
-      <div class="column is-4"><a href="#"><img src="{% static 'images/user.png' %}" alt="dog in rescue center"></a></div>
-      <div class="column is-4"><a href="#"><img src="static/images/user.png" alt="dog in rescue center"></a></div>
-      <div class="column is-4"><a href="#"><img src="static/images/user.png" alt="dog in rescue center"></a></div>
-      <div class="column is-4"><a href="#"><img src="static/images/user.png" alt="dog in rescue center"></a></div>
-      <div class="column is-4"><a href="#"><img src="static/images/user.png" alt="dog in rescue center"></a></div>
-      <div class="column is-4"><a href="#"><img src="static/images/user.png" alt="dog in rescue center"></a></div>
+      <p data-config-id="description">We tell them this: <span class="is-italic has-text-weight-semibold">"Because in Spain stray animal have a small percentage of being in a forever home".</span>In Spain dogs are abandon after they have done there jobs as; hunters, puppy factory or
+        dog fighting. Some stray dogs also have the bad luck that there family don't want them anymore, so they get dumped on the side of the road.</p><br>
+
+      <p data-config-id="description">There aren't rescue and cruelty prevention groups such as those in the Netherlands to serve as advocates for these sweet pups. Spanish strays are kicked, beaten, ran over by cars, and left for dead. They wander the streets searching for food, most
+        of them skeletal. And if these dogs have figured out hoe cruel people can be, they stay in deserted areas, searching for whatever bits of food they can find, shuddering and running away from any person that tries to come near them.</p><br>
+
+      <p data-config-id="description">And if they do have the chance of being in a home, many of them are attached to a three-foot chain, next to a dog house that is way too small, that they can barely reach because of how they are chained. They are covered in mud, and left there to
+        watch the cars fly by them every day...day in, and day out. No feeling of love or warmth from their master</p><br>
+
+      <p data-config-id="description">We can sum up the sentiment in Spain in one analogy: If you see a dog walking the streets in the Netherlands, your first thought is usually <span class="is-italic has-text-weight-semibold">“Oh no, someone’s dog got out!”</span> Whereas in Spain,
+        it’s <span class="is-italic has-text-weight-semibold">“Oh look, another forgotten, stray dog...with no place to call home... maybe we should call the dog catcher and get rid of it.”</span></p><br>
+
+      <p data-config-id="description">We know there are dogs all over the world, even in the Netherlands, who need help, but it’s just the strays of Spain need a few more advocates on their side.</p><br>
+
+      <p data-config-id="description"><span class="title is-5">Will you help us?</span></p>
     </div>
-  </div>
-</section>
-        </div>
+  </section>
+
+  <!------------------------ Gallery of Rescue Dogs in Spain ----------------->
+  <section data-section-id="1" data-component-id="15a7_17_02_awz" data-category="gallery" class="section">
+    <div class="container">
+      <h2 class="title has-text-centered" data-config-id="header">Gallery</h2>
+      <div class="columns is-multiline" data-config-id="gallery_02">
+
+
+        <div class="column is-4"><a href="#"><img src="{% static 'images/user.png' %}" alt="dog in rescue center"></a></div>
+        <div class="column is-4"><a href="#"><img src="static/images/user.png" alt="dog in rescue center"></a></div>
+        <div class="column is-4"><a href="#"><img src="static/images/user.png" alt="dog in rescue center"></a></div>
+        <div class="column is-4"><a href="#"><img src="static/images/user.png" alt="dog in rescue center"></a></div>
+        <div class="column is-4"><a href="#"><img src="static/images/user.png" alt="dog in rescue center"></a></div>
+        <div class="column is-4"><a href="#"><img src="static/images/user.png" alt="dog in rescue center"></a></div>
+      </div>
+    </div>
+  </section>
+</div>
 
 {% endblock %}
 

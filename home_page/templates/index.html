@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
-
+{% load staticfiles %}
 {% block page_title %}Home{% endblock %}
 
-{% block hero-image %}<img src="https://res.cloudinary.com/dbnahdjbc/image/upload/v1575487913/hero-image_c0kfee.png"></img>{% endblock %}
+{% block hero-image %}<img src="{% static 'images/hero-image.png' %}"></img>{% endblock %}
 
 
-{% block homepage %}
+{% block content %}
 
 <div class="container is-fluid" id="content">
   
