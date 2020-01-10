@@ -26,5 +26,5 @@ urlpatterns = [
     url(r'^$', homepage),
     url(r'^about/', include('about.urls')),
     url(r'^get_involved/', include('get_involved.urls')),
-    url(r'adoptables/', include('adoptables.urls')),
+    url(r'^adoptables/', include('adoptables.urls')),
 ]
