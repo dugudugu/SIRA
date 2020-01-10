@@ -115,6 +115,11 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+AUTHENTICATION_BACKENDS = {
+    "django.contrib.auth.backends.ModelBackend",
+    "accounts.AuthBackends.EmailAuthBackend",
+}
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -160,9 +165,8 @@ DEFAULT_FILE_STORAGE = "custom_storages.MediaStorage"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
-
-
-
-
-
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGOUT_REDIRECT_URL = 'login'
