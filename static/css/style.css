@@ -45,6 +45,25 @@
   
 }
 
+.main-dog-img {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 480px;
+  margin: 20px 40px;
+}
+
+
+
+.detail-dog-img {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 150px;
+  width: 150px;
+  margin-left: 40px;
+}
+
 
 
 
