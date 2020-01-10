@@ -1,36 +1,68 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, HttpResponseRedirect
 from django.contrib import auth, messages
-from accounts.forms import UserLoginForm
-
-
+from accounts.forms import UserLoginForm, UserRegistrationForm
+from django.contrib.auth.decorators import login_required
 
 # View to display the index page
 def index(request):
     return render(request, 'index.html')
+    
+    
+# View login page for administrators
+def login(request):
+    """A view that manages the login form"""
+    if request.method == 'POST':
+        user_form = UserLoginForm(request.POST)
+        if user_form.is_valid():
+            user = auth.authenticate(request.POST['username_or_email'], password=request.POST['password'])
+
+            if user:
+                auth.login(request, user)
+                messages.error(request, "You have successfully logged in")
+
+                if request.GET and request.GET['next'] !='':
+                    next = request.GET['next']
+                    return HttpResponseRedirect(next)
+                else:
+                    return redirect(reverse('index'))
+            else:
+                user_form.add_error(None, "Your username or password are incorrect")
+    else:
+        user_form = UserLoginForm()
+
+    args = {'user_form': user_form, 'next': request.GET.get('next', '')}
+    return render(request, 'login.html', args)
+
+# View that displays the profile page of a logged in user
+@login_required
+def profile(request):
+    return render(request, 'profile.html')
     
 # View to log user out
 def logout(request):
     auth.logout(request)
     messages.success(request, "You have been Logged Out!")
     return redirect(reverse('index'))
-    
-# View login page
-def login(request):
-    if request.user.is_authenticated:
-        return redirect(reverse('index'))
-    if request.method == "POST":
-        login_form = UserLoginForm(request.POST)
 
-        if login_form.is_valid():
-            user = auth.authenticate(username=request.POST['username'],
-                                    password=request.POST['password'])
-            
+
+# View that manages the registration form   
+def register(request):
+    if request.method == 'POST':
+        user_form = UserRegistrationForm(request.POST)
+        if user_form.is_valid():
+            user_form.save()
+
+            user = auth.authenticate(request.POST.get('email'), password=request.POST.get('password1'))
 
             if user:
-                auth.login(user=user, request=request)
-                messages.success(request, "You have successfully logged in!")
+                auth.login(request, user)
+                messages.success(request, "You have successfully registered")
+                return redirect(reverse('index'))
+
             else:
-                login_form.add_error(None, "Your username or password is incorrect")
+                messages.error(request, "unable to log you in at this time!")
     else:
-        login_form = UserLoginForm()
-    return render(request, 'login.html', {'login_form': login_form})   
+        user_form = UserRegistrationForm()
+
+    args = {'user_form': user_form}
+    return render(request, 'register.html', args)
