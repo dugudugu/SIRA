@@ -37,7 +37,7 @@ class LoginUserView(LoginView):
 
 @method_decorator(login_required, name='dispatch')
 class DashboardView(TemplateView):
-    template_name = 'account/dashboard.html'
+    template_name = 'dashboard.html'
     
     def dispatch(self, request, *args, **kwargs):
         return super(DashboardView, self).dispatch(request, *args, **kwargs)

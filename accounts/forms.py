@@ -14,7 +14,7 @@ class RegisterUserForm(forms.ModelForm):
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'input', 'placeholder': 'First name' ,'autofocus': True, 'required': True}),
             'last_name': forms.TextInput(attrs={'class': 'input', 'placeholder': 'Last name' ,'autofocus': True, 'required': True}),
-            'username': forms.TextInput(attrs={'class': 'input', 'placeholder': 'Username' ,'autofocus': True, 'required': True}),
+            'username': forms.TextInput(attrs={'class': 'input', 'placeholder': 'Username' ,  'required': True}),
             'email': forms.EmailInput(attrs={'class': 'input', 'placeholder': 'Email', 'required': True})
         }
 
@@ -29,6 +29,6 @@ class RegisterUserForm(forms.ModelForm):
 
 class LoginForm(AuthenticationForm):
     username = UsernameField(
-        widget=forms.TextInput(attrs={'class': 'input', 'autofocus': True, 'placeholder': 'Username'})
+        widget=forms.TextInput(attrs={'class': 'input','placeholder': 'Username', 'autofocus': True, 'required': True})
     )
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'input', 'placeholder': 'password'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'input', 'placeholder': 'Password'}))
