@@ -19,6 +19,7 @@ from home_page.views import homepage
 from about import urls
 from get_involved import urls
 from adoptables import urls
+from accounts import urls 
 
 
 urlpatterns = [
@@ -27,4 +28,6 @@ urlpatterns = [
     url(r'^about/', include('about.urls')),
     url(r'^get_involved/', include('get_involved.urls')),
     url(r'^adoptables/', include('adoptables.urls')),
+    url(r'^accounts/', include('accounts.urls')),
+    
 ]

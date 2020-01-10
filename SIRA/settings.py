@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'get_involved',
     'storages',
     'adoptables',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -81,6 +82,7 @@ WSGI_APPLICATION = 'SIRA.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+
 
 if "DATABASE_URL" in os.environ:
     DATABASES = {'default' : dj_database_url.parse(os.environ.get('DATABASE_URL'))}
@@ -152,10 +154,10 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-MEDIAFILES_LOCATION = 'media'
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+MEDIAFILES_LOCATION = "media"
+DEFAULT_FILE_STORAGE = "custom_storages.MediaStorage"
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
 
