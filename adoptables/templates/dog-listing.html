@@ -24,20 +24,42 @@
         <p>{{ object.description }}</p>
         <hr>
         
-        <div class="colums">
-            <div class="column">
-                <p><span>Date of birth:</span>{{ object.date_of_birth }}</p>
-                <p><span>Sex:</span>{{ object.sex }}</p>
-                <p><span>Age:</span>{{ object.age }}</p>
-                <p><span>From:</span>{{ object.in_shelter_from }}</p>
-            </div>
-            <div class="column">
-                <p><span>Breed:</span>{{ object.breed }}</p>
-                <p><span>Size:</span>{{ object.size }}</p>
-                <p><span>Location</span>{{ object.location }}</p>
-                <p><span>Situation:</span>{{ object.situation }}</p>
-            </div>
-        </div>
+        <table class="table is-fullwidth">
+          <tbody data-config-id="table">
+            <tr>
+              <td>Date of birth</td>
+              <td class="has-text-right">{{ object.date_of_birth }}</td>
+            </tr>
+            <tr>
+              <td>Sex</td>
+              <td class="has-text-right">{{ object.sex }}</td>
+            </tr>
+            <tr>
+              <td>Age</td>
+              <td class="has-text-right">{{ object.age }}</td>
+            </tr>
+            <tr>
+              <td>In shelter since</td>
+              <td class="has-text-right">{{ object.in_shelter_from }}</td>
+            </tr>
+            <tr>
+              <td>Breed</td>
+              <td class="has-text-right">{{ object.breed }}</td>
+            </tr>
+            <tr>
+              <td>Size</td>
+              <td class="has-text-right">{{ object.size }}</td>
+            </tr>
+            <tr>
+              <td>Location</td>
+              <td class="has-text-right">{{ object.location }}</td>
+            </tr>
+            <tr>
+              <td>Situation</td>
+              <td class="has-text-right">{{ object.situation }}</td>
+            </tr>
+          </tbody>
+        </table>
         
         <button class="button is-info" data-config-id="primary-action">Contact Us!</button>
         
@@ -45,15 +67,25 @@
       <div class="column is-6-desktop">
         <figure class="main-dog-img image" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image1.url }}')"></figure>
         <div class="level is-mobile" data-config-id="images">
+          
+          {% if object.dog_image2 %}
           <div class="level-item">
             <figure class="image detail-dog-img" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image2.url }}')"></figure>
           </div>
+          {% endif %}
+          
+          {% if object.dog_image3 %}
           <div class="level-item">
+            
             <figure class="image detail-dog-img" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image3.url }}')"></figure>
           </div>
+          {% endif %}
+          
+          {% if object.dog_image4 %}
           <div class="level-item">
             <figure class="image detail-dog-img" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image4.url }}')"></figure>
           </div>
+          {% endif %}
         </div>
       </div>
       
