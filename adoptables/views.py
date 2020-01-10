@@ -8,7 +8,7 @@ def all_dogs(request):
     return render(request, "adoptable.html", {"dogs": dogs})
 
 
-def dog_detail_view(request):
+def dog_detail_view(request, id):
     obj = get_object_or_404(Adoptable, id=id)
     context = {
         "object": obj
