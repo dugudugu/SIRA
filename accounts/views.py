@@ -1,68 +1,43 @@
-from django.shortcuts import render, redirect, reverse, HttpResponseRedirect
-from django.contrib import auth, messages
-from accounts.forms import UserLoginForm, UserRegistrationForm
+from __future__ import unicode_literals
+
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LoginView
+from django.http import HttpResponseForbidden, HttpResponse
 
-# View to display the index page
-def index(request):
-    return render(request, 'index.html')
+from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
+from django.views.generic import CreateView, TemplateView
+
+from .forms import RegisterUserForm, LoginForm
+
+
+class RegisterUserView(CreateView):
+    form_class = RegisterUserForm
+    template_name = "register.html"
+
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated():
+            return HttpResponseForbidden()
+
+        return super(RegisterUserView, self).dispatch(request, *args, **kwargs)
+
+    def form_valid(self, form):
+        user = form.save(commit=False)
+        user.set_password(form.cleaned_data['password'])
+        user.save()
+        return HttpResponse('User registered')
+
+
+class LoginUserView(LoginView):
+    form_class = LoginForm
+    template_name = "login.html"
+    redirect_authenticated_user = True
+    success_url = reverse_lazy('dashboard')
+
+
+@method_decorator(login_required, name='dispatch')
+class DashboardView(TemplateView):
+    template_name = 'account/dashboard.html'
     
-    
-# View login page for administrators
-def login(request):
-    """A view that manages the login form"""
-    if request.method == 'POST':
-        user_form = UserLoginForm(request.POST)
-        if user_form.is_valid():
-            user = auth.authenticate(request.POST['username_or_email'], password=request.POST['password'])
-
-            if user:
-                auth.login(request, user)
-                messages.error(request, "You have successfully logged in")
-
-                if request.GET and request.GET['next'] !='':
-                    next = request.GET['next']
-                    return HttpResponseRedirect(next)
-                else:
-                    return redirect(reverse('index'))
-            else:
-                user_form.add_error(None, "Your username or password are incorrect")
-    else:
-        user_form = UserLoginForm()
-
-    args = {'user_form': user_form, 'next': request.GET.get('next', '')}
-    return render(request, 'login.html', args)
-
-# View that displays the profile page of a logged in user
-@login_required
-def profile(request):
-    return render(request, 'profile.html')
-    
-# View to log user out
-def logout(request):
-    auth.logout(request)
-    messages.success(request, "You have been Logged Out!")
-    return redirect(reverse('index'))
-
-
-# View that manages the registration form   
-def register(request):
-    if request.method == 'POST':
-        user_form = UserRegistrationForm(request.POST)
-        if user_form.is_valid():
-            user_form.save()
-
-            user = auth.authenticate(request.POST.get('email'), password=request.POST.get('password1'))
-
-            if user:
-                auth.login(request, user)
-                messages.success(request, "You have successfully registered")
-                return redirect(reverse('index'))
-
-            else:
-                messages.error(request, "unable to log you in at this time!")
-    else:
-        user_form = UserRegistrationForm()
-
-    args = {'user_form': user_form}
-    return render(request, 'register.html', args)
+    def dispatch(self, request, *args, **kwargs):
+        return super(DashboardView, self).dispatch(request, *args, **kwargs)

@@ -1,40 +1,34 @@
 from django import forms
+from django.contrib.auth.forms import AuthenticationForm, UsernameField
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
-# Administrator login form
-class UserLoginForm(forms.Form):
-    username_or_email = forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput)
 
-# Registration form for new administrators
-class UserRegistrationForm(UserCreationForm):
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(
-        label='Password Confirmation',
-        widget=forms.PasswordInput
-    )
+class RegisterUserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'input', 'placeholder': 'Password'}))
+    password2 = forms.CharField(label="Repeat password", widget=forms.PasswordInput(attrs={'class': 'input', 'placeholder': 'Repeat password'}))
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ['first_name', 'last_name', 'username', 'email']
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class': 'input', 'placeholder': 'First name' ,'autofocus': True, 'required': True}),
+            'last_name': forms.TextInput(attrs={'class': 'input', 'placeholder': 'Last name' ,'autofocus': True, 'required': True}),
+            'username': forms.TextInput(attrs={'class': 'input', 'placeholder': 'Username' ,'autofocus': True, 'required': True}),
+            'email': forms.EmailInput(attrs={'class': 'input', 'placeholder': 'Email', 'required': True})
+        }
 
-    def clean_email(self):
-        email = self.cleaned_data.get('email')
-        username = self.cleaned_data.get('username')
-        if User.objects.filter(email=email).exclude(username=username):
-            raise forms.ValidationError(u'Email addresses must be unique.')
-        return email
-
+    # Validating password
     def clean_password2(self):
-        password1 = self.cleaned_data.get('password1')
-        password2 = self.cleaned_data.get('password2')
+        cd = self.cleaned_data
+        if cd['password2'] != cd['password']:
+            raise ValidationError("Password don't match")
 
-        if not password1 or not password2:
-            raise ValidationError("Password must not be empty")
+        return cd['password2']
 
-        if password1 != password2:
-            raise ValidationError("Passwords do not match")
 
-        return password2
+class LoginForm(AuthenticationForm):
+    username = UsernameField(
+        widget=forms.TextInput(attrs={'class': 'input', 'autofocus': True, 'placeholder': 'Username'})
+    )
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'input', 'placeholder': 'password'}))
