@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'storages',
     'adoptables',
     'accounts',
+    'contact',
 ]
 
 MIDDLEWARE = [
@@ -147,7 +148,6 @@ AWS_S3_REGION_NAME = 'eu-central-1'
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_SECRET_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 
-
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 STATICFILES_LOCATION = 'static'
@@ -167,6 +167,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
+
+SENDGRID_API_KEY= os.environ.get('SENDGRID_API_KEY')
+
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
