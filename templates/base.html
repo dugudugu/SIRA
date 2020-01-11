@@ -14,10 +14,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     
-    
-    
-    
-    
     <style>
         body {font-family: roboto;}
         .navbar {height: 125px;}
@@ -26,11 +22,12 @@
         .navbar-item {margin-left: 40px;}
         a.navbar-item, .navbar-link {color: #000; font-weight: 600; font-family: Courgette; cursor: url('{% static 'icons/animal-paw-print.png' %}'), auto;}
         a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:hover, .navbar-link.is-active {background-color: transparent; color: #1190CB;}
-        .navbar-end {margin-right: 100px;}
+        .navbar-end {margin-right: 50px;}
         .navbar-dropdown .navbar-item {margin: 10px 10px;}
         .navbar-dropdown {margin-top: -40px;}
         .user-welcome {margin: auto; padding-right:10px;}
         
+        .donate {margin-left: -60px;}
         .donate-badge {fill:#1190CB; max-height: 6rem;}
         .donate-text {font-size: 60px; font-weight:300;}
         
@@ -109,7 +106,7 @@
             </div>
             {% endif %}
             
-            <div class="nabar-link">
+            <div class="nabar-link donate">
                 <a class="navbar-item" href="#">
                     <svg class="donate-badge is-hidden-desktop-only" xmlns="http://www.w3.org/2000/svg" height="448" viewBox="0 -1 448 448" width="100">
                         <path d="m336 355.2v-323.2h-224v323.2l112 59.7zm0 0"/>
@@ -192,8 +189,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
-<script async type="text/javascript" src="#"></script>
-<script async type="text/javascript" src="#"></script>
+<script async type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+<script async type="text/javascript" src="{% static 'js/custom-jquery.js' %}"></script>
     
 </body>
 </html>
