@@ -26,7 +26,10 @@
         .navbar-item {margin-left: 40px;}
         a.navbar-item, .navbar-link {color: #000; font-weight: 600; font-family: Courgette; cursor: url('{% static 'icons/animal-paw-print.png' %}'), auto;}
         a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:hover, .navbar-link.is-active {background-color: transparent; color: #1190CB;}
-        .navbar-end {margin-right: 80px;}
+        .navbar-end {margin-right: 100px;}
+        .navbar-dropdown .navbar-item {margin: 10px 10px;}
+        .navbar-dropdown {margin-top: -40px;}
+        
         
         .image img {display: block; height: 80vh; width: 100vw;}
         
@@ -65,14 +68,14 @@
             </div>
             <div class="navbar-item has-dropdown is-hoverable">
                 <div class="navbar-link">About</div>
-                <div class="navbar-dropdown ">
+                <div class="navbar-dropdown">
                     <a class="navbar-item" href="{% url 'why_spain' %}">Why Spain?</a>
                     <a class="navbar-item" href="{% url 'sira_team' %}">SIRA Team</a>
                 </div>
             </div>
             <div class="navbar-item has-dropdown is-hoverable">
                 <div class="navbar-link">Get Involved</div>
-                <div class="navbar-dropdown ">
+                <div class="navbar-dropdown">
                     <a class="navbar-item" href="{% url 'adoption' %}">Adopt</a>
                     <a class="navbar-item" href="{% url 'volunteer' %}">Volunteer</a>
                     <a class="navbar-item" href="{% url 'adoption-guide' %}">Guide</a>
