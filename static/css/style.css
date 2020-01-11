@@ -4,6 +4,9 @@
   --color-transperant-orange: rgba(205, 76, 17, 0.8);
 }
 
+
+
+
 /*     Help section custom styling     */
 .help-section, .adoption {
   background-color: var(--main-color);
@@ -68,52 +71,37 @@
 
 
 /*     Media queries     */
-@media screen and (max-width: 767px){
-    .help-adopt-svg, .help-foster-svg, .help-donate-svg, .help-volunteer-svg {
-      fill: var(--color-white);
-      height: 48px;
-      width: 48px;
+@media screen and (max-width: 768px){
+    .svg-size {
+      display: none;
     }
+    .about-us {
+      height: 80vh;
+    }
+    .img-size {
+      display: none;
+    }
+    
 }
 
 
-@media screen and (min-width:768px){
-    .navbar-brand-centered {
-        position: absolute;
-        left: 50%;
-        display: block;
-        width: 160px;
-        text-align: center;
-        background-color: #eee;
-    }
-    .navbar>.container .navbar-brand-centered, 
-    .navbar>.container-fluid .navbar-brand-centered {
-        margin-left: -80px;
-    }
-    .help-adopt-svg, .help-foster-svg, .help-donate-svg, .help-volunteer-svg {
-      fill: var(--color-white);
+@media screen and (min-width:769px){
+    .svg-size {
       height: 96px;
       width: 96px;
     }
+    .img-size {
+      display: none;
+    }
 }
 
-a.navbar-item {
-  color: #FAFAFF;
-  text-align: center;
-}
 
-a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:hover, .navbar-link.is-active {
-    background-color: transparent;
-    color: #A399FF;
+
 }
 
 @media screen and (min-width: 1088px) {
-  .navbar-start {
-    margin-left: auto;
-    margin-right: 150px;
-  }
-  .navbar-end {
-    margin-right: auto;
-    margin-left: 150px;
-  }
+    .svg-size {
+      height: 128px;
+      width: 128px;
+    }
 }

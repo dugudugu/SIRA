@@ -21,17 +21,24 @@
     <style>
         body {font-family: roboto;}
         .navbar {height: 125px;}
-        .navbar-brand {height: 100%;}
-        .navbrand {position: absolute; left: 50%; margin-left: -100px; margin-top: 0; padding: 0; height: 100%; display: flex; align-items: center;}
-        .navbar-logo {width: 100px; height: 100px; align-self: center;}
-        .navbar-item {margin: auto 60px;}
-        a.navbar-item, .navbar-link {color: #000; font-weight: 600; font-family: Courgette; cursor: url('{% static 'icons/animal-paw-print.png' %}'), auto;}
+        .navbar-item img {max-height: 7rem; margin: 20px 40px;}
         
-        .image img {display: block; height: 90vh; width: 100vw;}
+        .navbar-item {margin-left: 40px;}
+        a.navbar-item, .navbar-link {color: #000; font-weight: 600; font-family: Courgette; cursor: url('{% static 'icons/animal-paw-print.png' %}'), auto;}
+        a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:hover, .navbar-link.is-active {background-color: transparent; color: #1190CB;}
+        .navbar-end {margin-right: 80px;}
+        
+        .image img {display: block; height: 80vh; width: 100vw;}
         
         .footer {margin-top: 5rem;}
         .footer .buttons {justify-content: center;}
         .footer .control-button {text-align: center;}
+        
+        @media screen and (max-width:768px){
+            .navbar-item img {max-height: 2rem;}
+            .navbar {height: auto;}
+            .image img {display: block; height: 40vh; width: 100vw;}
+        }
         
     </style>
     
@@ -39,65 +46,75 @@
 <body>
     
     <!------------------------------ Navigation Bar ------------------------->
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbrand" href="#">
-                    <img class="navbar-logo" src="{% static 'images/logo.jpg' %}" alt="SIRA-logo">
-                </a>
-                <span role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </span>
-            </div>
-            
-            <div id="navMenu" class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item is-size-5" href="/">Home</a>
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link is-size-5">About</a>
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item" href="{% url 'why_spain' %}">Why Spain?</a>
-                            <a class="navbar-item" href="{% url 'sira_team' %}">SIRA Team</a>
-                        </div>
-                    </div>
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link is-size-5">Get Involved</a>
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item" href="{% url 'adoption' %}">Adopt</a>
-                            <a class="navbar-item" href="{% url 'volunteer' %}">Volunteer</a>
-                            <a class="navbar-item" href="{% url 'adoption-guide' %}">Guide</a>
-                            <a class="navbar-item" href="{% url 'faqs' %}">FAQ's</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="navbar-end">
-                    <a class="navbar-item is-size-5" href="{% url 'all_dogs' %}">Adopt</a>
-                    <a class="navbar-item is-size-5" href="#">Happy Endings</a>
-                    <a class="navbar-item is-size-5" href="#">Contact</a>
-                </div>
-            </div>
-    </nav>
     
-    <div class="image">
-    {% block hero-image %}{% endblock %}
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/"><img src="{% static 'images/logo.jpg' %}" alt="SIRA logo"></a>
+
+        <div class="navbar-burger burger" data-target="navMenubd-example">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
+
+    <div id="navMenubd-example" class="navbar-menu">
+        <div class="navbar-start">
+            <div class="navbar-item">
+                <a class="navbar-item is-active" href="/">Home</a>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <div class="navbar-link">About</div>
+                <div class="navbar-dropdown ">
+                    <a class="navbar-item" href="{% url 'why_spain' %}">Why Spain?</a>
+                    <a class="navbar-item" href="{% url 'sira_team' %}">SIRA Team</a>
+                </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <div class="navbar-link">Get Involved</div>
+                <div class="navbar-dropdown ">
+                    <a class="navbar-item" href="{% url 'adoption' %}">Adopt</a>
+                    <a class="navbar-item" href="{% url 'volunteer' %}">Volunteer</a>
+                    <a class="navbar-item" href="{% url 'adoption-guide' %}">Guide</a>
+                    <a class="navbar-item" href="{% url 'faqs' %}">FAQ's</a>
+                </div>
+            </div>
+            <a class="navbar-item" href="{% url 'all_dogs' %}">Adopt</a>
+            <a class="navbar-item" href="#">Happy Endings</a>
+            <a class="navbar-item" href="#">Contact</a>
+        </div>
+
+        <div class="navbar-end">
+
+            {% if user.is_authenticated %}
+            <div class="navbar-item">
+                <div class="field is-grouped">
+                    <p class="control"><a class="button is-info is-inverted" href="#">Profile</a></p>
+                    <p class="control"><a class="button is-danger is-inverted" href="{% url 'logout' %}">Logout</a></p>
+                </div>
+            </div>
+            {% else %}
+            <div class="navbar-item has-dropdown is-hoverable">
+                <div class="navbar-link">Admin</div>
+                <div class="navbar-dropdown ">
+                    <a class="navbar-item" href="{% url 'login' %}">Login</a>
+                    <a class="navbar-item" href="{% url 'register' %}">Register</a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</nav>
     
-    {% block content %}{% endblock %}
-    {% block login %}{% endblock %}
-    {% block homepage %}{% endblock %}
-    {% block sira_team %}{% endblock %}
-    {% block why_spain %}{% endblock %}
-    {% block faqs %}{% endblock %}
-    
-    
-    
-    
-    
-    
-    
-    <!------------------------------ Footer ------------------------->
+
+<div class="image">
+{% block hero-image %}{% endblock %}
+</div>
+   
+{% block content %}{% endblock %}
+  
+ 
+<!------------------------------ Footer ------------------------->
 <footer class="footer">
     <div class="columns">
         <div class="column is-3 is-offset-2 has-text-centered">
