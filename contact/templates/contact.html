@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block page_title %}Contact{% endblock %}
+
+{% block hero-image %}<img src="{% static 'images/hero-image10.jpg' %}"></img>{% endblock %}
+
+{% block content %}
+
+<div class="container is-fluid is-mobile" id="content">
+    <section data-section-id="1" data-component-id="15a7_9_03_awz" data-category="contact" class="section">
+        <div class="container">
+            <h2 class="title has-text-centered" data-config-id="header">Contact Us</h2>
+            <p class="subtitle is-size-6 has-text-centered is-italic has-tect-grey"></p>
+        </div>
+    </section>
+
+    <section data-section-id="2" data-component-id="15a7_12_02_awz" data-category="contact" class="section">
+        <div class="container has-text-centered">
+            <div class="columns is-centered is-mobile">
+                <div class="column is-5 is-4-desktop">
+                    <form action="{% url 'home' %}" method="post">
+                        {% csrf_token %}
+
+                        {% for field in form %}
+                        <div class="field">
+                            <div class="control">
+                                <label for="{{ field.id_for_label }}" class="label">{{ field.label }}</label>
+                                {{ field }}
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                        <div class="field">
+                            <div class="control">
+                                <input class="button is-info is-fullwidth" type="submit" value="Send!">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}    
+
