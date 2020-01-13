@@ -1,5 +1,6 @@
 from SIRA import settings
 from django.core.mail import send_mail
+from django.template.loader import get_template
 from django.shortcuts import render, redirect
 
 from .forms import ContactForm
@@ -9,35 +10,31 @@ def contact(request):
     template = "contact.html"
     
     if request.method == 'GET':
-        form = ContactForm(request.GET)
+        form = ContactForm
         
     else:
         form = ContactForm(request.POST)
         if form.is_valid():
             form_name = form.cleaned_data['name']
-            form_subject = form.cleaned_data['subject']
             form_email = form.cleaned_data['email']
             form_message = form.cleaned_data['message']
             
-            subject = 'Site contact form'
+            subject = 'You have recieced a new contact request'
             from_email = settings.EMAIL_HOST_USER
-            to_mail = [from_email]
+            to_mail =  [settings.EMAIL_HOST_USER]
             
-            contact_message ="%s: %s via %s"%(
-                form_name, 
-                form_message, 
-                form_email)
+            context ={
+                'user' : form_name,
+                'message' : form_message,
+                'email' : form_email
+            }
             
-            send_mail(subject, 
-                form_message, 
-                from_email, 
-                to_mail, 
-                fail_silently=True)
+            contact_message = get_template('contact_message.txt').render(context)
             
-    context = {
+            send_mail(subject, contact_message, from_email, to_mail,  fail_silently=True)
+           
+            
+    form_view= {
         "form": form, 
     }    
-    return render(request, "contact.html", context)
-    
-    
-    
+    return render(request, "contact.html", form_view)
