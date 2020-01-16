@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block page_title %}Donation{% endblock %}
+
+{% block head_js %}
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+     //<![CDATA[
+        Stripe.publishableKey = '{{ publishable }}';
+    //]]>
+</script>
+<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
+
+{% endblock %}
+
+{% block hero-image %}<img src="{% static 'images/hero-image13.jpg' %}"></img>{% endblock %}
+
+{% block content %}
+
+<div class="container is-fluid" id="content">
+    <section data-section-id="1" data-component-id="15a7_9_03_awz" data-category="donation" class="section">
+        <div class="container">
+            <h2 class="title has-text-centered" data-config-id="header">Donate</h2>
+            <p class="subtitle is-size-6 has-text-centered is-italic has-tect-grey">Thank you for donating!</p>
+        </div>
+    </section>
+
+    <section data-section-id="2" data-component-id="15a7_12_02_awz" data-category="donation" class="section">
+        <div class="container">
+            <div class="columns is-centered is-mobile">
+                <div class="column is-5 is-4-desktop">
+                    <form action="" method="post" id="payment_form">
+                        {% csrf_token %}
+                        
+                        <div id="credit-card-errors" style="display: none;">
+                            <div id="alert-message block-message error" id="stripe-error-message"></div>
+                        </div>
+                        
+                        <div class="field">
+                            <div class="control">
+                            {{ order_form }}
+                            </div>
+                        </div>
+                       
+                        <br> 
+                       
+                        <div class="field">
+                            <div class="control">
+                            {{ payment_form }}
+                            </div
+                        </div>
+                                               
+                        <br>  
+                        
+                        <div class="field">
+                            <div class="control">
+                                <input class="button is-info is-fullwidth" type="submit" id="submit_payment_btn" name="commit" value="Submit Donation!">
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    
+    
+    
+</div>    
+
+
+{% endblock %}
