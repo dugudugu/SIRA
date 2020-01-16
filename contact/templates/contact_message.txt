@@ -1,0 +1,8 @@
+You recieved a message from your contact form,
+From: {{ user }}
+
+The message is as following:
+{{ message }}
+
+Reply to this emai:
+{{ email }}
