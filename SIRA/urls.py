@@ -20,14 +20,18 @@ from about import urls
 from get_involved import urls
 from adoptables import urls
 from accounts import urls 
+from contact import urls
+from donation import urls
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', homepage),
+    url(r'^$', homepage, name='home'),
     url(r'^about/', include('about.urls')),
     url(r'^get_involved/', include('get_involved.urls')),
     url(r'^adoptables/', include('adoptables.urls')),
     url(r'^accounts/', include('accounts.urls')),
+    url(r'^contact/', include('contact.urls')),
+    url(r'^donation/', include('donation.urls')),
     
 ]

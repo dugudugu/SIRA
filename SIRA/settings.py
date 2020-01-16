@@ -32,6 +32,9 @@ DEBUG = True
 ALLOWED_HOSTS = [os.environ.get('AWSC9_HOST'), 'stichting-i-respect-animals.herokuapp.com']
 
 
+
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -48,6 +51,7 @@ INSTALLED_APPS = [
     'adoptables',
     'accounts',
     'contact',
+    'donation',
 ]
 
 MIDDLEWARE = [
@@ -168,7 +172,15 @@ MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
-SENDGRID_API_KEY= os.environ.get('SENDGRID_API_KEY')
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER= os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD= os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+
+STRIPE_PUBLISHABLE = os.environ.get('STRIPE_PUBLISHABLE')
+STRIPE_SECRET = os.environ.get('STRIPE_SECRET')
+
 
 
 LOGIN_URL = 'login'
