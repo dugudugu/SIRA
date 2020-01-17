@@ -1,1 +1,1 @@
-web: gunicorn SIRA .wsgi:application 
+web: gunicorn SIRA.wsgi:application 
