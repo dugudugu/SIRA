@@ -18,7 +18,7 @@ def donation(request):
             
             try:
                 donator = stripe.Charge.create(
-                    amount = request.amount * 100,
+                    amount = (request.amount) * 100,
                     currency = "EUR",
                     email = request.email,
                     card = payment_form.cleaned_data['stripe_id'],
@@ -36,17 +36,16 @@ def donation(request):
                 
         else:
             print(payment_form.errors)
-            messages.error(request, " We are unable to take your donation with the card you have provided")
-        
+            messages.error(request, " We are unable to take your donation with the card you have")
+            
     else:
-        payment_form = MakePaymentForm()
         order_form = OrderForm()
-        
+        payment_form = MakePaymentForm()
+    
     context = {
-        'payment_form' : payment_form,
-        'order_form' : order_form,
-        'publishable' : settings.STRIPE_PUBLISHABLE
-        
+        'order_form': order_form, 
+        'payment_form': payment_form, 
+        'publishable': settings.STRIPE_PUBLISHABLE
     }    
 
     return render(request, "donation.html", context)    

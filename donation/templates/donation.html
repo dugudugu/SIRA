@@ -20,16 +20,16 @@
 <div class="container is-fluid" id="content">
     <section data-section-id="1" data-component-id="15a7_9_03_awz" data-category="donation" class="section">
         <div class="container">
-            <h2 class="title has-text-centered" data-config-id="header">Donate</h2>
-            <p class="subtitle is-size-6 has-text-centered is-italic has-tect-grey">Thank you for donating!</p>
+            <h2 class="title has-text-centered" data-config-id="header">Please make a Donations</h2>
+            <p class="subtitle is-size-6 has-text-centered is-italic has-tect-grey">Help us <strong>save</strong> more stray by making a donation!</p>
         </div>
     </section>
 
     <section data-section-id="2" data-component-id="15a7_12_02_awz" data-category="donation" class="section">
         <div class="container">
             <div class="columns is-centered is-mobile">
-                <div class="column is-5 is-4-desktop">
-                    <form action="" method="post" id="payment_form">
+                <div class="column is-10-mobile is-6-desktop">
+                    <form method="post" id="payment_form">
                         {% csrf_token %}
                         
                         <div id="credit-card-errors" style="display: none;">
@@ -41,13 +41,12 @@
                             {{ order_form }}
                             </div>
                         </div>
-                       
-                        <br> 
+                        
+                        <br>
                        
                         <div class="field">
-                            <div class="control">
+                            <div class="control is-4-desktop">
                             {{ payment_form }}
-                            </div
                         </div>
                                                
                         <br>  
@@ -64,10 +63,6 @@
         </div>
     </section>
 
-    
-    
-    
-    
 </div>    
 
 

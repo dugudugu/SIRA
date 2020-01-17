@@ -21,16 +21,21 @@ class MakePaymentForm(forms.Form):
             'expiry_year': forms.Select(attrs={'required': True}),
             'stripe_id': forms.HiddenInput,
         }
-        
-        
+    
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['credit_card_number'].widget.attrs['class'] = 'input label'
-        self.fields['cvv'].widget.attrs['class'] = 'input'
-        self.fields['expiry_month'].widget.attrs['class'] = 'input is-2'
-        self.fields['expiry_year'].widget.attrs['class'] = 'input is-2'
+        self.fields['credit_card_number'].widget.attrs['class'] = 'input'
+        self.fields['credit_card_number'].widget.attrs['placeholder'] = 'Fill in card number'
         
-    
+        self.fields['cvv'].widget.attrs['class'] = 'input'   
+        self.fields['cvv'].widget.attrs['placeholder'] = 'Fill in the CVV'
+        
+        self.fields['expiry_month'].widget.attrs['class'] = 'input'   
+        self.fields['expiry_month'].widget.attrs['placeholder'] = 'Select the cards expire month'
+        
+        self.fields['expiry_year'].widget.attrs['class'] = 'input'
+        self.fields['expiry_year'].widget.attrs['placeholder'] = 'Select the cards expire year'
+
 class OrderForm(forms.Form):
     
     full_name = forms.CharField(max_length=50)
@@ -58,5 +63,5 @@ class OrderForm(forms.Form):
         self.fields['country'].widget.attrs['class'] = 'input'   
         self.fields['country'].widget.attrs['placeholder'] = 'Country e.g. Netherlands'
         
-        self.fields['amount'].widget.attrs['class'] = 'input'   
-    
+        self.fields['amount'].widget.attrs['class'] = 'input'
+        self.fields['amount'].widget.attrs['placeholder'] = 'How much would you like to donate'
