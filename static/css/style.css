@@ -76,12 +76,17 @@
       display: none;
     }
     .about-us {
-      height: 80vh;
+      height: 130vh;
     }
     .img-size {
       display: none;
     }
-    
+    .help-section {
+      height: 30vh;
+    }
+    .adoption-steps {
+      margin: 5rem 1rem;
+    }
 }
 
 
@@ -90,11 +95,15 @@
       height: 96px;
       width: 96px;
     }
+    .adoption-steps {
+      margin: 5rem 1rem;
+}
+    
 }
 
 
 
-}
+
 
 @media screen and (min-width: 1088px) {
     .svg-size {
