@@ -8,7 +8,7 @@
     <section data-section-id="1" data-component-id="15a7_9_03_awz" data-category="register" class="section">
         <div class="container">
             <h2 class="title has-text-centered" data-config-id="header">Create a new account</h2>
-            <p class="subtitle is-size-6 has-text-centered is-italic has-tect-grey">Already got an account? <a href="{% url 'login' %}">Sign In</a></p>
+            <p class="subtitle is-size-6 has-text-centered is-italic has-tect-grey">Already got an account? <a href="#">Sign In</a></p>
         </div>
     </section>
 
@@ -16,7 +16,7 @@
         <div class="container has-text-centered">
             <div class="columns is-centered is-mobile">
                 <div class="column is-12-mobile is-4-desktop">
-                    <form action="{% url 'register' %}" method="post">
+                    <form method="POST">
                         {% csrf_token %}
                         
                         {% for non_field_error in form.non_field_errors %}

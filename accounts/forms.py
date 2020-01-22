@@ -28,7 +28,5 @@ class RegisterUserForm(forms.ModelForm):
 
 
 class LoginForm(AuthenticationForm):
-    username = UsernameField(
-        widget=forms.TextInput(attrs={'class': 'input','placeholder': 'Username', 'autofocus': True, 'required': True})
-    )
+    username = UsernameField(widget=forms.TextInput(attrs={'class': 'input','placeholder': 'Username', 'autofocus': True, 'required': True}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'input', 'placeholder': 'Password'}))

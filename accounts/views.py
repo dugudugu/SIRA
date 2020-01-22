@@ -1,13 +1,12 @@
-from __future__ import unicode_literals
-
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.http import HttpResponseForbidden, HttpResponse
+from django.shortcuts import render, redirect
 
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
-from django.views.generic import CreateView, TemplateView
-
+from django.views.generic import CreateView
+from django.contrib.auth import login, authenticate
 from .forms import RegisterUserForm, LoginForm
 
 
@@ -25,19 +24,11 @@ class RegisterUserView(CreateView):
         user = form.save(commit=False)
         user.set_password(form.cleaned_data['password'])
         user.save()
-        return HttpResponse('User registered')
+        return redirect(reverse('home'))
 
 
 class LoginUserView(LoginView):
     form_class = LoginForm
     template_name = "login.html"
     redirect_authenticated_user = True
-    success_url = reverse_lazy('dashboard')
-
-
-@method_decorator(login_required, name='dispatch')
-class DashboardView(TemplateView):
-    template_name = 'dashboard.html'
-    
-    def dispatch(self, request, *args, **kwargs):
-        return super(DashboardView, self).dispatch(request, *args, **kwargs)
+    success_url = reverse_lazy('home')
