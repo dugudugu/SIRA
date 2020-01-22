@@ -9,6 +9,7 @@
         <div class="container">
             <h2 class="title has-text-centered" data-config-id="header">Log in</h2>
             <p class="subtitle is-size-6 has-text-centered is-italic has-tect-grey">Administrators ONLY!</p>
+            <p class="subtitle is-size-6 has-text-centered is-italic has-tect-grey"><a href="{% url 'password_reset' %}">Forgot my password</a></p>
         </div>
     </section>
 
@@ -39,9 +40,6 @@
                         <div class="field is-grouped">
                             <div class="control is-expanded">
                                 <input class="button is-info is-fullwidth" type="submit" value="Sign in!">
-                            </div>
-                            <div class="control is-expanded">
-                                <input href="{% url 'password_reset' %}" class="button is-danger is-outlined is-fullwidth" type="submit" value="Forgot password">
                             </div>
                         </div>
                     </form>

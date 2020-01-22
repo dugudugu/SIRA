@@ -25,7 +25,7 @@ class RegisterUserView(CreateView):
         user = form.save(commit=False)
         user.set_password(form.cleaned_data['password'])
         user.save()
-        messages.success(self.request, (f"Issue with foo"))
+        messages.success(self.request, f"Issue with foo")
         return redirect('login')
 
 class LoginUserView(LoginView):
