@@ -1,22 +1,23 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
+from django.contrib import messages
 from django.http import HttpResponseForbidden, HttpResponse
 from django.shortcuts import render, redirect
 
 from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView
-from django.contrib.auth import login, authenticate
+
 from .forms import RegisterUserForm, LoginForm
 
 
 class RegisterUserView(CreateView):
     form_class = RegisterUserForm
     template_name = "register.html"
-
+    
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated():
-            return HttpResponseForbidden()
+            return redirect ('home')
 
         return super(RegisterUserView, self).dispatch(request, *args, **kwargs)
 
@@ -24,8 +25,8 @@ class RegisterUserView(CreateView):
         user = form.save(commit=False)
         user.set_password(form.cleaned_data['password'])
         user.save()
-        return redirect(reverse('home'))
-
+        messages.success(self.request, (f"Issue with foo"))
+        return redirect('login')
 
 class LoginUserView(LoginView):
     form_class = LoginForm
