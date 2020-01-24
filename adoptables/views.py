@@ -19,7 +19,7 @@ def dog_detail_view(request, id):
 
 
 # Admin view posting new adoptable dogs
-class DogView(TemplateView):
+class AddNewDogView(TemplateView):
     template_name = "new-dog.html"
     
     def get(self, request):
