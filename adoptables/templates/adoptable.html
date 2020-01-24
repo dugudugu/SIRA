@@ -11,33 +11,37 @@
             <h5 class="subtitle has-text-centered">Showing 1234563 to 1234654 of 132416 dogs</h5>
 
             <!-------- Card to view all dogs -->
-            <div class="colums">
-                
-                 {% for dog in dogs %}
-                 <div class="column is-3">
+
+            <div class="columns is-multiline">
+
+                {% for dog in dogs %}
+                <div class="column is-3-desktop is-1-mobile">
                     <div class="card">
                         <div class="card-image">
-                            <figure class="dog-image image" style="background-image: url('{{ MEDIA_URL }}{{ dog.dog_image1.url }}')"></figure>
+                            <figure class="dog-image image" style="background-image: url('{{ MEDIA_URL }}{{ dog.dog_image1 }}')"></figure>
                         </div>
                         <div class="card-content has-text-centered">
                             {% if dog.status == True %}
-                            <button class="button is-success is-rounded"><span class="icon is-small"><i class="fas fa-heart"></i></span><span>for adoption</span></button> 
+                            <a class="button is-success is-rounded" disabled><span class="icon is-small"><i class="fas fa-heart"></i></span><span>for adoption</span></a> 
                             {% elif dog.status == False %}
-                            <button class="button is-danger is-rounded"><span class="icon is-small"><i class="fas fa-heart"></i></span><span>adopted</span></button> 
+                            <a class="button is-danger is-rounded" disabled><span class="icon is-small"><i class="fas fa-heart"></i></span><span>adopted</span></a> 
                             {% endif %}
-
-                            <h1 class="title is-3 has-text-centered">{{ dog.name }}</h1>
-                            <p>{{ dog.age }}</p>
-                            <p>{{ dog.breed }}</p>
-                            <p>{{ dog.sex }}</p>
-
-                            <a class="button is-primary" href="{{ dog.get_absolute_url }}">Read more</a>
+                            <br>
+                            <br>
+                            <h1 class="title is-size-3-desktop is-size-5-mobile has-text-centered">{{ dog.name }}</h1>
+                            <p class="is-size-5-desktop is-size-7-mobile">{{ dog.age }}</p>
+                            <p class="is-size-5-desktop is-size-7-mobile">{{ dog.breed }}</p>
+                            <p class="is-size-5-desktop is-size-7-mobile">{{ dog.sex }}</p>
+                            <p class="is-size-5-desktop is-size-7-mobile">{{ dog.size }}</p>
+                            <br>
+                            <a class="button is-info is-outlined" href="{{ dog.get_absolute_url }}">Read more</a>
                         </div>
                     </div>
-                    {% endfor %}
                 </div>
+                {% endfor %}
             </div>
-            </div>
+
+        </div>
     </section>
 </div>
 
