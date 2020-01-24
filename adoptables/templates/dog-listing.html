@@ -65,25 +65,25 @@
         
       </div>
       <div class="column is-6-desktop">
-        <figure class="main-dog-img image" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image1.url }}')"></figure>
+        <figure class="main-dog-img image" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image1 }}')"></figure>
         <div class="level is-mobile" data-config-id="images">
           
           {% if object.dog_image2 %}
           <div class="level-item">
-            <figure class="image detail-dog-img" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image2.url }}')"></figure>
+            <figure class="image detail-dog-img" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image2 }}')"></figure>
           </div>
           {% endif %}
           
           {% if object.dog_image3 %}
           <div class="level-item">
             
-            <figure class="image detail-dog-img" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image3.url }}')"></figure>
+            <figure class="image detail-dog-img" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image3 }}')"></figure>
           </div>
           {% endif %}
           
           {% if object.dog_image4 %}
           <div class="level-item">
-            <figure class="image detail-dog-img" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image4.url }}')"></figure>
+            <figure class="image detail-dog-img" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image4 }}')"></figure>
           </div>
           {% endif %}
         </div>
