@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
+
 # Models for adoptable dog instances
 class Adoptable(models.Model):
     name = models.CharField(max_length=100, default='')
@@ -15,15 +16,13 @@ class Adoptable(models.Model):
     in_shelter_from = models.CharField(max_length=100, default='')
     location = models.CharField(max_length=100, default='')
     
-    dog_image1 = models.ImageField(upload_to='dog_images', blank=True)
-    dog_image2 = models.ImageField(upload_to='dog_images', blank=True, null=True)
-    dog_image3 = models.ImageField(upload_to='dog_images', blank=True, null=True)
-    dog_image4 = models.ImageField(upload_to='dog_images', blank=True, null=True)
-    
+    dog_image1 = models.ImageField(upload_to='dog_images/', blank=True)
+    dog_image2 = models.ImageField(upload_to='dog_images/', blank=True, null=True)
+    dog_image3 = models.ImageField(upload_to='dog_images/', blank=True, null=True)
+    dog_image4 = models.ImageField(upload_to='dog_images/', blank=True, null=True)
+
     def get_absolute_url(self):
         return reverse('dog_details', kwargs={'id':self.id})
     
     def __str__(self):
         return self.name
-    
-    

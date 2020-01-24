@@ -12,8 +12,9 @@
 
             <!-------- Card to view all dogs -->
             <div class="colums">
-                <div class="column is-3">
-                    {% for dog in dogs %}
+                
+                 {% for dog in dogs %}
+                 <div class="column is-3">
                     <div class="card">
                         <div class="card-image">
                             <figure class="dog-image image" style="background-image: url('{{ MEDIA_URL }}{{ dog.dog_image1.url }}')"></figure>
