@@ -5,7 +5,6 @@ from django.http import HttpResponseForbidden, HttpResponse
 from django.shortcuts import render, redirect
 
 from django.urls import reverse_lazy, reverse
-from django.utils.decorators import method_decorator
 from django.views.generic import CreateView
 
 from .forms import RegisterUserForm, LoginForm
@@ -17,7 +16,7 @@ class RegisterUserView(CreateView):
     
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated():
-            return redirect ('home')
+            return redirect('home')
 
         return super(RegisterUserView, self).dispatch(request, *args, **kwargs)
 
@@ -25,7 +24,6 @@ class RegisterUserView(CreateView):
         user = form.save(commit=False)
         user.set_password(form.cleaned_data['password'])
         user.save()
-        messages.success(self.request, f"Issue with foo")
         return redirect('login')
 
 class LoginUserView(LoginView):
