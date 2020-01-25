@@ -61,7 +61,17 @@
           </tbody>
         </table>
         
-        <button class="button is-info" data-config-id="primary-action">Contact Us!</button>
+        {% if user.is_authenticated %}
+        <div class="buttons">
+          <a class="button is-warning" href="#">Edit Information</a>
+          <a class="button is-danger" href="#">Remove</a>
+        </div>
+        
+        {% else %}
+        <a class="button is-info" href="#">Contact Us!</a>
+        {% endif %}
+        
+        
         
       </div>
       <div class="column is-6-desktop">

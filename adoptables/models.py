@@ -21,8 +21,10 @@ class Adoptable(models.Model):
     dog_image3 = models.ImageField(upload_to='dog_images/', blank=True, null=True)
     dog_image4 = models.ImageField(upload_to='dog_images/', blank=True, null=True)
 
-    def get_absolute_url(self):
-        return reverse('dog_details', kwargs={'id':self.id})
-    
+
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('dog_details', kwargs={'pk':self.pk})
+    
