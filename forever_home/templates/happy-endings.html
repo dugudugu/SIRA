@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block page_title %}Happy Endings{% endblock %}
+
+{% block content %}
+<div class="container is-fluid" id="content">
+    <section data-section-id="3" data-component-id="15a7_13_01_awz" data-category="all dogs" class="section">
+        <div class="container">
+            <h2 class="title has-text-centered" data-config-id="header">Happy Ending</h2>
+            <h5 class="subtitle has-text-centered">Have a look at all the rescue dogs who have now a place to call <strong class="is-uppercase">home!</strong></h5>
+
+            <!-------- Card to view all dogs that have been adopted -->
+
+            <div class="columns is-multiline">
+
+                {% for dog in dogs %}
+
+                <div class="column is-4-desktop is-1-mobile">
+                    <div class="card" style="height: 100%">
+                        <div class="card-image">
+                            <figure class="adoption-image image" style="background-image: url('{{ MEDIA_URL }}{{ dog.adoption_image }}')"></figure></div>
+                        <div class="card-content has-text-centered">
+                            <h3 class="title is-3">{{ dog.name }}</h5>
+                            <h6 class="subtitle is-7">{{ dog.adoption_date }}</h6>
+                            
+                            {% if user.is_authenticated %}
+                            <a class="button is-info is-outlined" href="{% url 'update_happy_ending' dog.id %}">Update</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</div>
+
+
+{% endblock %}

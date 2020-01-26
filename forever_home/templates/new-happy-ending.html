@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block page_title %}Add a adopted dog{% endblock %}
+
+{% block content %}
+
+
+<div class="container is-fluid" id="content">
+    <section data-section-id="1" data-component-id="15a7_9_03_awz" data-category="contact" class="section">
+        <div class="container">
+            <h2 class="title has-text-centered" data-config-id="header">Add a new adoptable dog</h2>
+            <p class="subtitle is-size-6 has-text-centered is-italic has-tect-grey">Please fill in all the required fields to submit form</p>
+        </div>
+
+        <div class="container">
+            <div class="columns is-centered is-mobile">
+                <div class="column is-10-mobile is-4-desktop">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        
+                        {% for field in form %}
+                        <div class="field">
+                            <div class="control">
+                                <label for="{{ field.id_for_label }}" class="label is-size-5-desktop is-size-7-mobile">{{ field.label }}</label> 
+                                {{ field }}
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <br>
+                        <div class="field">
+                            <div class="control">
+                                <input class="button is-info is-fullwidth" type="submit" value="Submit">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+{% endblock %}

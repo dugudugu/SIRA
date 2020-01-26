@@ -84,8 +84,28 @@
                     <a class="navbar-item" href="{% url 'faqs' %}">FAQ's</a>
                 </div>
             </div>
+            {% if user.is_authenticated %}
+            <div class="navbar-item has-dropdown is-hoverable">
+                <div class="navbar-link">Adopt</div>
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="{% url 'all_dogs' %}">View All</a>
+                    <a class="navbar-item" href="{% url 'add_dog' %}">Add Dogs</a>
+                </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <div class="navbar-link">Forever Home</div>
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="{% url 'happy_endings' %}">View All</a>
+                    <a class="navbar-item" href="{% url 'new_happy_ending' %}">Add Dogs</a>
+                </div>
+            </div>
+            
+            {% else %}
             <a class="navbar-item" href="{% url 'all_dogs' %}">Adopt</a>
-            <a class="navbar-item" href="#">Happy Endings</a>
+            <a class="navbar-item" href="#{% url 'happy_endings' %}">Forever Home</a>
+            {% endif %}
+            
+            
             <a class="navbar-item" href="{% url 'contact' %}">Contact</a>
         </div>
 
@@ -162,26 +182,7 @@
                 </div>
             </div>
         </div>
-        <div class="column is-3 has-text-centered">
-            <h6 class="title">Get emails from SIRA</h6>
-            <div class="field has-addons has-addons-centered">
-                <p class="control has-icons-left">
-                    <input class="input" type="text" placeholder="e.g Alex Smith">
-                    <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
-                </p>
-            </div>
-            <div class="field has-addons has-addons-centered">
-                <p class="control has-icons-left">
-                    <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
-                    <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
-                </p>
-            </div>
-            <div class="field">
-                <p class="control control-button">
-                    <button class="button is-success footer-buttons">Sign Up!</button>
-                </p>
-            </div>
-        </div>
+        
     </div>
     <p class="content has-text-centered">
         <strong>&copy; 2019 SIRA</strong> by <a href="#">Cindy Marchena</a> | For Educational Purposes Only | All Rights Reserved
