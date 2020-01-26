@@ -3,107 +3,93 @@
 {% block page_title %}{{ object.name }}{% endblock %}
 
 {% block content %}
-
-
 <div class="container is-fluid" id="content">
 
-<section data-section-id="1" data-component-id="15a7_14_02_awz" data-category="dog listing" class="section">
-  <div class="container">
-    <div class="columns is-desktop is-vcentered">
-       
-      <div class="column is-6-desktop">
-        <h2 class="title" data-config-id="header">{{ object.name }}</h2>
-        
-        {% if object.status == True %}
-        <button class="button is-success is-rounded"><span class="icon is-small"><i class="fas fa-heart"></i></span><span>for adoption</span></button> 
-        {% elif object.status == False %}
-        <button class="button is-danger is-rounded"><span class="icon is-small"><i class="fas fa-heart"></i>"></span><span>adopted</span></button> 
-        {{% endif%}
-        <hr>
-        
-        <p>{{ object.description }}</p>
-        <hr>
-        
-        <table class="table is-fullwidth">
-          <tbody data-config-id="table">
-            <tr>
-              <td>Date of birth</td>
-              <td class="has-text-right">{{ object.date_of_birth }}</td>
-            </tr>
-            <tr>
-              <td>Sex</td>
-              <td class="has-text-right">{{ object.sex }}</td>
-            </tr>
-            <tr>
-              <td>Age</td>
-              <td class="has-text-right">{{ object.age }}</td>
-            </tr>
-            <tr>
-              <td>In shelter since</td>
-              <td class="has-text-right">{{ object.in_shelter_from }}</td>
-            </tr>
-            <tr>
-              <td>Breed</td>
-              <td class="has-text-right">{{ object.breed }}</td>
-            </tr>
-            <tr>
-              <td>Size</td>
-              <td class="has-text-right">{{ object.size }}</td>
-            </tr>
-            <tr>
-              <td>Location</td>
-              <td class="has-text-right">{{ object.location }}</td>
-            </tr>
-            <tr>
-              <td>Situation</td>
-              <td class="has-text-right">{{ object.situation }}</td>
-            </tr>
-          </tbody>
-        </table>
-        
-        {% if user.is_authenticated %}
-        <div class="buttons">
-          <a class="button is-warning" href="#">Edit Information</a>
-          <a class="button is-danger" href="#">Remove</a>
+  <section data-section-id="1" data-component-id="15a7_14_02_awz" data-category="dog listing" class="section">
+    <div class="container">
+      <div class="columns is-desktop is-vcentered">
+
+        <div class="column is-6-desktop">
+          <h2 class="title" data-config-id="header">{{ object.name }}</h2>
+
+          {% if object.status == True %}
+          <button class="button is-success is-rounded"><span class="icon is-small"><i class="fas fa-heart"></i></span><span>for adoption</span></button> {% elif object.status == False %}
+          <button class="button is-danger is-rounded"><span class="icon is-small"><i class="fas fa-heart"></i>"></span><span>adopted</span></button> {{% endif%}
+          <hr>
+
+          <p>{{ object.description }}</p>
+          <hr>
+
+          <table class="table is-fullwidth">
+            <tbody data-config-id="table">
+              <tr>
+                <td>Date of birth</td>
+                <td class="has-text-right">{{ object.date_of_birth }}</td>
+              </tr>
+              <tr>
+                <td>Sex</td>
+                <td class="has-text-right">{{ object.sex }}</td>
+              </tr>
+              <tr>
+                <td>Age</td>
+                <td class="has-text-right">{{ object.age }}</td>
+              </tr>
+              <tr>
+                <td>In shelter since</td>
+                <td class="has-text-right">{{ object.in_shelter_from }}</td>
+              </tr>
+              <tr>
+                <td>Breed</td>
+                <td class="has-text-right">{{ object.breed }}</td>
+              </tr>
+              <tr>
+                <td>Size</td>
+                <td class="has-text-right">{{ object.size }}</td>
+              </tr>
+              <tr>
+                <td>Location</td>
+                <td class="has-text-right">{{ object.location }}</td>
+              </tr>
+              <tr>
+                <td>Situation</td>
+                <td class="has-text-right">{{ object.situation }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          {% if user.is_authenticated %}
+          <div class="buttons">
+            <a class="button is-warning" href="{% url 'dog_update' object.id %}">Edit Information</a>
+            <a class="button is-danger" href="{% url 'dog_delete' object.id %}">Remove</a>
+          </div>
+
+          {% else %}
+          <a class="button is-info" href="{% url 'contact' %}">Contact Us!</a> {% endif %}
+
         </div>
-        
-        {% else %}
-        <a class="button is-info" href="#">Contact Us!</a>
-        {% endif %}
-        
-        
-        
-      </div>
-      <div class="column is-6-desktop">
-        <figure class="main-dog-img image" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image1 }}')"></figure>
-        <div class="level is-mobile" data-config-id="images">
-          
-          {% if object.dog_image2 %}
-          <div class="level-item">
-            <figure class="image detail-dog-img" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image2 }}')"></figure>
+        <div class="column is-6-desktop">
+          <figure class="main-dog-img image" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image1 }}')"></figure>
+          <div class="level is-mobile" data-config-id="images">
+
+            {% if object.dog_image2 %}
+            <div class="level-item">
+              <figure class="image detail-dog-img" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image2 }}')"></figure>
+            </div>
+            {% endif %} {% if object.dog_image3 %}
+            <div class="level-item">
+
+              <figure class="image detail-dog-img" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image3 }}')"></figure>
+            </div>
+            {% endif %} {% if object.dog_image4 %}
+            <div class="level-item">
+              <figure class="image detail-dog-img" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image4 }}')"></figure>
+            </div>
+            {% endif %}
           </div>
-          {% endif %}
-          
-          {% if object.dog_image3 %}
-          <div class="level-item">
-            
-            <figure class="image detail-dog-img" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image3 }}')"></figure>
-          </div>
-          {% endif %}
-          
-          {% if object.dog_image4 %}
-          <div class="level-item">
-            <figure class="image detail-dog-img" style="background-image: url('{{ MEDIA_URL }}{{ object.dog_image4 }}')"></figure>
-          </div>
-          {% endif %}
         </div>
+
       </div>
-      
     </div>
-  </div>
-</section>
-
+  </section>
 </div>
-
-
 {% endblock %}

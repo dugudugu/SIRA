@@ -34,7 +34,7 @@
                             <p class="is-size-5-desktop is-size-7-mobile">{{ dog.sex }}</p>
                             <p class="is-size-5-desktop is-size-7-mobile">{{ dog.size }}</p>
                             <br>
-                            <a class="button is-info is-outlined" href="{{ dog.get_absolute_url }}">Read more</a>
+                            <a class="button is-info is-outlined" href="{% url 'dog_details' dog.id %}">Read more</a>
                         </div>
                     </div>
                 </div>

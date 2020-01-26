@@ -1,6 +1,5 @@
-from django.views.generic import TemplateView, UpdateView
-from django.shortcuts import render,redirect, get_object_or_404
-from django.views.generic import ListView, DetailView, CreateView
+from django.shortcuts import render, redirect
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView, TemplateView
 from .models import Adoptable
 from .forms import DogForm
 
@@ -18,9 +17,8 @@ class DogDetailView(DetailView):
     template_name = 'dog-listing.html'
 
 
-
-
-# Admin view for posting new adoptable dogs
+# Authenticated User Views
+# View for posting new adoptable dog
 
 class AddNewDogView(TemplateView):
     template_name = "new-dog.html"
@@ -37,3 +35,15 @@ class AddNewDogView(TemplateView):
             return redirect ('all_dogs')
             
         return render(request, self.template_name)
+        
+# View for updating an exsisting adoptable dog
+class DogUpdateView(UpdateView):
+    model = Adoptable
+    template_name = "new-dog.html"
+    fields = ['name', 'description', 'age', 'breed', 'sex', 'size', 'situation', 'status', 'date_of_birth', 'in_shelter_from', 'location', 'dog_image1', 'dog_image2', 'dog_image3', 'dog_image4',]
+                    
+# View for deleting an exsisting adoptable dog
+class DogDeleteView(DeleteView):
+    model = Adoptable
+    template_name = "dog-confirm-delete.html"
+    success_url = '/'

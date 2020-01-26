@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block page_title %}Delete a rescue{% endblock %}
+
+{% block content %}
+
+
+<div class="container is-fluid" id="content">
+<section data-section-id="1" data-component-id="15a7_9_03_awz" data-category="contact" class="section">
+        <div class="container">
+            <h2 class="title has-text-centered" data-config-id="header">Remove a rescue dog</h2>
+        </div>
+    </section>
+
+    <section data-section-id="2" data-component-id="15a7_12_02_awz" data-category="contact" class="section">
+        <div class="container">
+            <div class="columns is-centered is-mobile">
+                <div class="column is-10-mobile is-6-desktop">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        
+                        <div class="container has-text-centered">
+                        <h2 class="subtitle is-size-4-desktop">Are you sure that you want to remove <strong class="has-text-danger">{{object.name}}</strong> from the list of available dogs for adoption?</h2>
+                        </div>
+                        <br>
+                        <div class="buttons is-centered">
+                            <button class="button is-danger is-centered" type="submit">Yes, Delete</button>
+                            <a class="button"  href="{% url 'dog_details' object.id %}">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+{% endblock %}
