@@ -7,11 +7,11 @@ class ContactForm(forms.Form):
     message = forms.CharField(widget=forms.Textarea)
     
     class Meta:
-        fields = ['name', 'email', 'message']
+        fields = ['name', 'email', 'message',]
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'input', 'placeholder': 'Name e.g Sam Smith', 'required': True}),
-            'email': forms.EmailInput(attrs={'class': 'input', 'placeholder': 'Email e.g. s.smith@gmail.com', 'required': True}),
-            'message': forms.TextInput(attrs={'class': 'textarea', 'placeholder': 'How can we be of help?' ,'autofocus': True, 'required': True}),
+            'name': forms.TextInput(attrs={'required': True}),
+            'email': forms.EmailInput(attrs={'required': True}),
+            'message': forms.TextInput(attrs={'required': True}),
         }
         
     def __init__(self, *args, **kwargs):

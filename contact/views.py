@@ -21,7 +21,7 @@ def contact(request):
             
             subject = 'You have recieced a new contact request'
             from_email = settings.EMAIL_HOST_USER
-            to_mail =  [settings.EMAIL_HOST_USER]
+            to_mail =  [settings.EMAIL_HOST_USER, 'marchena.cindy@gmail.com']
             
             context ={
                 'user' : form_name,
@@ -34,7 +34,7 @@ def contact(request):
             send_mail(subject, contact_message, from_email, to_mail,  fail_silently=True)
            
             
-    form_view= {
+    form_view = {
         "form": form, 
     }    
     return render(request, "contact.html", form_view)
