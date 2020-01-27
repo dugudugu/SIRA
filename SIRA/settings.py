@@ -47,11 +47,12 @@ INSTALLED_APPS = [
     'home_page',
     'about',
     'get_involved',
-    'storages',
     'adoptables',
-    'accounts',
+    'forever_home',
     'contact',
     'donation',
+    'storages',
+    'accounts',
 ]
 
 MIDDLEWARE = [

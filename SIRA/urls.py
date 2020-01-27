@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from home_page.views import homepage
 from about import urls
 from get_involved import urls
 from adoptables import urls
+from forever_home import urls
 from accounts import urls 
 from contact import urls
 from donation import urls
@@ -30,8 +33,10 @@ urlpatterns = [
     url(r'^about/', include('about.urls')),
     url(r'^get_involved/', include('get_involved.urls')),
     url(r'^adoptables/', include('adoptables.urls')),
+    url(r'^forever_home/', include('forever_home.urls')),
     url(r'^accounts/', include('accounts.urls')),
     url(r'^contact/', include('contact.urls')),
     url(r'^donation/', include('donation.urls')),
     
 ]
+
