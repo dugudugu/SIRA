@@ -19,7 +19,6 @@ class DogDetailView(DetailView):
 
 # Authenticated User Views
 # View for posting new adoptable dog
-
 class AddNewDogView(TemplateView):
     template_name = "new-dog.html"
     
@@ -39,9 +38,9 @@ class AddNewDogView(TemplateView):
 # View for updating an exsisting adoptable dog
 class DogUpdateView(UpdateView):
     model = Adoptable
+    form_class = DogForm
     template_name = "new-dog.html"
-    fields = ['name', 'description', 'age', 'breed', 'sex', 'size', 'situation', 'status', 'date_of_birth', 'in_shelter_from', 'location', 'dog_image1', 'dog_image2', 'dog_image3', 'dog_image4',]
-                    
+
 # View for deleting an exsisting adoptable dog
 class DogDeleteView(DeleteView):
     model = Adoptable

@@ -2,8 +2,7 @@ from django.db import models
 from django.urls import reverse
 
 
-
-# Models for adoptable dog instances
+# Model for adoptable dog instance
 class Adoptable(models.Model):
     name = models.CharField(max_length=100, default='')
     in_shelter_from = models.CharField(max_length=20, default='')
