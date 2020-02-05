@@ -154,6 +154,14 @@
         </div>
     </div>
 </nav>
+
+{% if messages %}
+<div class="notification is-success has-text-centered">
+    {% for message in messages %}
+    <div class="title is-size-1-desktop is-size-3-mobile">{{ message }}</div>
+    {% endfor %}
+</div>
+{% endif %}
     
 
 <div class="image">
