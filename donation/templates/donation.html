@@ -31,7 +31,7 @@
                 <div class="column is-10-mobile is-6-desktop">
                     
                     <form method="post" id="payment-form">
-                        {% csrf_token %}
+                        
                         
                         <div id="credit-card-errors" style="display: none;">
                             <div id="alert-message block-message error" id="stripe-error-message"></div>
@@ -44,14 +44,14 @@
                         </div>
                         
                         <br>
-                       
+                        
                         <div class="field">
                             <div class="control is-4-desktop">
                             {{ payment_form }}
                         </div>
                                                
                         <br>  
-                        
+                        {% csrf_token %}
                         <div class="field">
                             <div class="control">
                                 <input class="button is-info is-fullwidth" type="submit" id="submit_payment_btn" name="commit" value="Submit Donation!">
