@@ -9,13 +9,16 @@
     <title>SIRA | {% block page_title %}{% endblock %}</title>
     <link rel="icon" href="{% static 'images/favicon.jpg' %}" type="image/x-icon"/ >
     
-    <link href="https://fonts.googleapis.com/css?family=Courgette|Patua+One|Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Indie+Flower&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    
+    {% block head_js %}{% endblock head_js %}
     
     <style>
-        body {font-family: roboto;}
+        body {font-family: 'Indie Flower', cursive;}
         .navbar {height: 125px;}
         .navbar-item img {max-height: 7rem; margin: 20px 40px;}
         
@@ -28,12 +31,12 @@
         .user-welcome {margin: auto; padding-right:10px;}
         
         .donate {margin-left: -60px;}
-        .donate-badge {fill:#1190CB; max-height: 6rem;}
+        .donate-badge {fill: #1190CB; max-height: 6rem;}
         .donate-text {font-size: 60px; font-weight:300;}
         
         .image img {display: block; height: 80vh; width: 100vw;}
         
-        .footer {margin-top: 5rem;}
+        .footer {margin-top: 5rem; background-color: #1190CB;}
         .footer .buttons {justify-content: center;}
         .footer .control-button {text-align: center;}
         
@@ -50,7 +53,7 @@
 </head>
 <body>
     
-    <!------------------------------ Navigation Bar ------------------------->
+<!------------------------------ Navigation Bar ------------------------->
     
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -102,7 +105,7 @@
             
             {% else %}
             <a class="navbar-item" href="{% url 'all_dogs' %}">Adopt</a>
-            <a class="navbar-item" href="#{% url 'happy_endings' %}">Forever Home</a>
+            <a class="navbar-item" href="{% url 'happy_endings' %}">Forever Home</a>
             {% endif %}
             
             
@@ -162,34 +165,33 @@
  
 <!------------------------------ Footer ------------------------->
 <footer class="footer">
-    <div class="columns">
-        <div class="column is-3 is-offset-2 has-text-centered">
+    
+    <div>
+        <div class="is-2 is-offset-4 has-text-centered">
             <h6 class="title">About Us</h6>
-            <p>About us short informtaion section</p>
+            <p>We are a group of volunteer that focus on fostering and adoption of rescue dogs in Spain</p>
         </div>
-        <div class="column is-2 has-text-centered">
-            <h6 class="title">Our loacation:</h6>
+        <div class=" is-2 has-text-centered">
             <address>
                     <strong >Stichting I Respect Animals</strong><br>
-                        <span class="icon is-small is-left"><i class="fas fa-envelope"></i><a href="mailto:adoptie.sira@gmail.com">adopties.sira@gmail.com</a></span>
+                        <span class="icon is-small is-left"><i class="fas fa-envelope"></i><a href="mailto:sira4dogs@gmail.com">sira4dogs@gmail.com</a></span>
                 </address>
             <div class="columns has-text-centered">
                 <div class="column has-text-centered">
                     <div class="buttons" data-config-id="icons">
-                        <a class="button footer-buttons" href="#"><img src="{% static 'svg/facebook-f.svg' %}" alt=""></a>
-                        <a class="button footer-buttons" href="#"><img src="{% static 'svg/instagram.svg' %}" alt=""></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </div>
     <p class="content has-text-centered">
-        <strong>&copy; 2019 SIRA</strong> by <a href="#">Cindy Marchena</a> | For Educational Purposes Only | All Rights Reserved
+        <strong>&copy; 2019 SIRA</strong> by <a class="has-text-white" href="#">Cindy Marchena</a> | For Educational Purposes Only | All Rights Reserved
     </p>
 </footer>
     
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
 <script async type="text/javascript" src="{% static 'js/custom.js' %}"></script>

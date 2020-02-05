@@ -1,20 +1,24 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
-from .forms import MakePaymentForm, OrderForm
+from .forms import MakePaymentForm, DonationForm
+from .models import Donation, DonationLineItem
 from django.conf import settings
+from django.utils import timezone
 import stripe
+
 
 # Create your views here.
 stripe.api_key = settings.STRIPE_SECRET
 
 def donation(request):
     if request.method=="POST":
-        order_form = OrderForm(request.POST)
+        donation_form = DonationForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
 
-        if order_form.is_valid() and payment_form.is_valid():
-            order = order_form.save(commit=False)
-            order.save()
+        if donation_form.is_valid() and payment_form.is_valid():
+            donate = donation_form.save(commit=False)
+            donate.date = timezone.now()
+            donate.save()
             
             try:
                 donator = stripe.Charge.create(
@@ -36,14 +40,14 @@ def donation(request):
                 
         else:
             print(payment_form.errors)
-            messages.error(request, " We are unable to take your donation with the card you have")
+            messages.error(request, "We are unable to take your donation with the card you have")
             
     else:
-        order_form = OrderForm()
+        donation_form = DonationForm()
         payment_form = MakePaymentForm()
     
     context = {
-        'order_form': order_form, 
+        'donation_form': donation_form, 
         'payment_form': payment_form, 
         'publishable': settings.STRIPE_PUBLISHABLE
     }    
