@@ -37,8 +37,7 @@
         .image img {display: block; height: 80vh; width: 100vw;}
         
         .footer {margin-top: 5rem; background-color: #1190CB;}
-        .footer .buttons {justify-content: center;}
-        .footer .control-button {text-align: center;}
+        .footer .buttons {justify-content: start;}
         
         @media screen and (max-width:768px){
             .navbar-item img {max-height: 2rem;}
@@ -133,11 +132,11 @@
             
             <div class="nabar-link donate">
                 <a class="navbar-item" href="{% url 'donate' %}">
-                    <svg class="donate-badge is-hidden-desktop-only" xmlns="http://www.w3.org/2000/svg" height="448" viewBox="0 -1 448 448" width="100">
+                    <svg class="donate-badge" xmlns="http://www.w3.org/2000/svg" height="448" viewBox="0 -1 448 448" width="100">
                         <path d="m336 355.2v-323.2h-224v323.2l112 59.7zm0 0"/>
                         <path d="m352 360c0 3-1.6 5.7-4.2 7.1l-120 64c-2.4 1.3-5.2 1.3-7.5 0l-120-64c-2.6-1.4-4.2-4.1-4.2-7.1v-328h-16v339.2l144 75.8 144-75.8v-339.2h-16zm0 0"/>
                         <g>
-                            <svg preserveAspectRatio="xMidYMid meet" data-bbox="0 0 337.772 303.508" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 337.772 303.508" height="100" width="100" transform="translate(180 100)" class="white-svg">
+                            <svg preserveAspectRatio="xMidYMid meet" data-bbox="0 0 337.772 303.508" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 337.772 303.508" height="100" width="100" x="180" y="100" class="white-svg">
                             <path d="M310.485 21.159C290.731 4.583 271.484-.029 245.926 0c-27.13 2.348-50.615 15.589-77.041 49.05C142.46 15.589 118.975 2.348 91.845 0 66.287-.029 47.038 4.583 27.284 21.159 14.511 31.878 0 60.341 0 87.465c.339 54.573 38.391 136.609 163.485 212.905l5.165 3.138.236-.141.236.141 5.165-3.138c125.094-76.296 163.146-158.332 163.485-212.905-.001-27.124-14.514-55.587-27.287-66.306z"></path>
                             </svg>
                         </g>
@@ -147,7 +146,6 @@
                             </svg>
                         </g>
                     </svg>
-            
                 </a>
             </div>
             
@@ -173,31 +171,44 @@
  
 <!------------------------------ Footer ------------------------->
 <footer class="footer">
-    
-    <div>
-        <div class="is-2 is-offset-4 has-text-centered">
-            <h6 class="title">About Us</h6>
-            <p>We are a group of volunteer that focus on fostering and adoption of rescue dogs in Spain</p>
+    <div class="container has-text-centered">
+        <div class="level">
+            <div class="level-item">
+                <img class="image is-64x64" src="{% static 'images/logo.jpg' %}" alt="SIRA-logo" data-config-id="image">
+            </div>
         </div>
-        <div class=" is-2 has-text-centered">
-            <address>
-                    <strong >Stichting I Respect Animals</strong><br>
-                        <span class="icon is-small is-left"><i class="fas fa-envelope"></i><a href="mailto:sira4dogs@gmail.com">sira4dogs@gmail.com</a></span>
-                </address>
-            <div class="columns has-text-centered">
-                <div class="column has-text-centered">
-                    <div class="buttons" data-config-id="icons">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
+        <div class="columns is-centered has-text-white">
+            <div class="column is-8">
+                <h2 class="title is-4"><a class="has-text-white" href="/" data-config-id="brand">Stichting I Respect Animal</a></h2>
+                <p class="block" data-config-id="description">Our mission is to give every unwanted dog a chance at having a forever home. Not only do we find new homes for dog in The Netherlands, but we also work with <a class="has-text-white" href="http://spac.cat/">SPAC</a>, a rescue center in Spain. We are not in it for the money - we are in it to give unwanted dog a shot at a happy life.
+                </p>
+            </div>
+        </div>
+        <div class="columns is-centered">
+            <div class="column is-7">
+                <div class="level" data-config-id="nav">
+                    <a class="level-item title is-5 has-text-white" href="{% url 'why_spain' %}">Why Spain?</a>
+                    <a class="level-item title is-5 has-text-white" href="{% url 'volunteer' %}">Volunteer</a>
+                    <a class="level-item title is-5 has-text-white" href="{% url 'all_dogs' %}">Available Dogs</a>
+                    <a class="level-item title is-5 has-text-white" href="{% url 'donate' %}" style="margin-bottom: 24px;">Donate</a>
                 </div>
             </div>
         </div>
-
     </div>
-    <p class="content has-text-centered">
-        <strong>&copy; 2019 SIRA</strong> by <a class="has-text-white" href="#">Cindy Marchena</a> | For Educational Purposes Only | All Rights Reserved
-    </p>
+    <hr>
+    <div class="columns">
+        <div class="column">
+            <div class="buttons" data-config-id="icons">
+                <a class="button" href="https://www.facebook.com/stichtingirespectanimals/"><i class="fab fa-facebook-f"></i></a>
+                <a class="button" href="{% url 'contact' %}"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="column has-text-right-tablet">
+            <p class="content has-text-centered has-text-white">
+                &copy; 2019 SIRA by <a class="has-text-white" href="https://www.linkedin.com/in/cindymarchena/">Cindy Marchena</a> | For Educational Purposes Only | All Rights Reserved
+            </p>
+        </div>
+    </div>
 </footer>
     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
