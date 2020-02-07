@@ -31,7 +31,7 @@
         .user-welcome {margin: auto; padding-right:10px;}
         
         .donate {margin-left: -60px;}
-        .donate-badge {fill: #1190CB; max-height: 6rem;}
+        .donate-badge {fill: #FFC300; max-height: 6rem;}
         .donate-text {font-size: 60px; font-weight:300;}
         
         .image img {display: block; height: 80vh; width: 100vw;}
@@ -40,11 +40,15 @@
         .footer .buttons {justify-content: start;}
         
         @media screen and (max-width:768px){
-            .navbar-item img {max-height: 2rem;}
+            .navbar-item img {max-height: 3rem; margin: 0px 10px;}
             .navbar {height: auto;}
             .image img {display: block; height: 40vh; width: 100vw;}
             .navbar-item {margin-left: 0px;}
-            .navbar-burger {margin-right: 20px;}
+            .navbar-burger {margin-top: 20px;}
+            .donate {margin-left: 0px;}
+            .donate-badge {max-height: 4rem; margin-top: 10px;}
+            .navbar-item.has-dropdown .navbar-dropdown {display: none;}
+            .navbar-item.has-dropdown.is-active .navbar-dropdown {display: block;}
         }
         
     </style>
@@ -58,16 +62,29 @@
     <div class="navbar-brand">
         <a class="navbar-item" href="/"><img src="{% static 'images/logo.jpg' %}" alt="SIRA logo"></a>
 
+
         <div class="navbar-burger burger" data-target="navMenubd-example">
             <span></span>
             <span></span>
             <span></span>
+        </div
+        
+        <!--------Donation button is moved outside of the burger menu when mobile -->
+        <div class="nabar-link donate is-hidden-desktop">
+            <a class="navbar-item" href="{% url 'donate' %}">
+                <svg class="donate-badge" xmlns="http://www.w3.org/2000/svg" height="448" viewBox="0 -1 448 448" width="100">
+                    <path d="m336 355.2v-323.2h-224v323.2l112 59.7zm0 0"/><path d="m352 360c0 3-1.6 5.7-4.2 7.1l-120 64c-2.4 1.3-5.2 1.3-7.5 0l-120-64c-2.6-1.4-4.2-4.1-4.2-7.1v-328h-16v339.2l144 75.8 144-75.8v-339.2h-16zm0 0"/>
+                    <g><svg preserveAspectRatio="xMidYMid meet" data-bbox="0 0 337.772 303.508" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 337.772 303.508" height="100" width="100" x="180" y="100" class="white-svg"><path d="M310.485 21.159C290.731 4.583 271.484-.029 245.926 0c-27.13 2.348-50.615 15.589-77.041 49.05C142.46 15.589 118.975 2.348 91.845 0 66.287-.029 47.038 4.583 27.284 21.159 14.511 31.878 0 60.341 0 87.465c.339 54.573 38.391 136.609 163.485 212.905l5.165 3.138.236-.141.236.141 5.165-3.138c125.094-76.296 163.146-158.332 163.485-212.905-.001-27.124-14.514-55.587-27.287-66.306z"></path></svg></g>
+                    <g><svg xmlns="http://www.w3.org/2000/svg"xmlns:xlink="http://www.w3.org/1999/xlink" class="white-svg"><text class="donate-text" x="135" y="300">Donate</text></svg></g>
+                </svg>
+            </a>
         </div>
     </div>
+    
 
     <div id="navMenubd-example" class="navbar-menu">
         <div class="navbar-start">
-            <div class="navbar-item">
+            <div class="navbar-item is-active">
                 <a class="navbar-item" href="/">Home</a>
             </div>
             <div class="navbar-item has-dropdown is-hoverable">
@@ -130,7 +147,7 @@
             </div>
             {% endif %}
             
-            <div class="nabar-link donate">
+            <div class="nabar-link donate is-hidden-touch">
                 <a class="navbar-item" href="{% url 'donate' %}">
                     <svg class="donate-badge" xmlns="http://www.w3.org/2000/svg" height="448" viewBox="0 -1 448 448" width="100">
                         <path d="m336 355.2v-323.2h-224v323.2l112 59.7zm0 0"/>
