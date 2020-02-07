@@ -1,8 +1,16 @@
 from django.shortcuts import render
+from adoptables.models import Adoptable
+
 
 # Render view for Why Spain Rescue Dogs page
 def why_spain(request):
-    return render(request, "why-spain.html" )
+    
+    featured_dogs = Adoptable.objects.filter().order_by('?')[:6]
+    context = {
+        'featured_dogs': featured_dogs,
+        'size': 'size',
+    }
+    return render(request, "why-spain.html", context )
 
 # Render view for SIRA Team page
 def sira_team(request):
