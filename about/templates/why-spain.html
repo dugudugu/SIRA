@@ -33,10 +33,10 @@
 <section data-section-id="1" data-component-id="15a7_3_09_awz" data-category="features" class="section">
   <div class="container has-text-centered">
     <h2 class="title" data-config-id="header">Will you help us?</h2>
-    <div class="columns is-multiline" data-config-id="features_09">
-      
+    <div class="columns is-multiline slider" data-config-id="features_09">
+
       {% for dog in featured_dogs %}
-      <div class="column is-6 is-2-desktop">
+      <div class="column is-6 is-2-desktop slider">
         <div class="level">
           <div class="level-item">
             <figure class="image detail-dog-img" style="background-image: url('{{ dog.dog_image1.url }}')"></figure>
@@ -45,8 +45,8 @@
         <h4 class="title is-4 has-text-centered">{{ dog.name }}</h4>
       </div>
       {% endfor %}
-      
     </div>
+    <br>
     <a class="button is-warning is-medium" href="{% url 'all_dogs' %}"><strong>View All!</strong></a>
   </div>
 </section>
