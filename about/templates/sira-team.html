@@ -7,59 +7,56 @@
 {% block content %}
 
 <div class="container is-fluid" id="content">
-    
 <!------------------------ SIRA Team Section -----------------> 
-    <section data-section-id="1" data-component-id="15a7_7_01_awz" data-category="sira-team" class="section">
-        <div class="container has-text-centered">
-            <h2 class="title" data-config-id="header">Meet the Team</h2>
-            <p class="subtitle is-5 has-text-grey is-italic" data-config-id="description">We are the humans that made this whole thing possible</p>
-            <div class="columns" data-config-id="team_01">
+<section data-section-id="1" data-component-id="15a7_7_01_awz" data-category="sira-team" class="section">
+    <div class="container has-text-centered">
+        <h2 class="title" data-config-id="header">Meet the Team</h2>
+        <p class="subtitle is-5 has-text-grey is-italic" data-config-id="description">We are the humans that made this whole thing possible</p>
+        <div class="columns" data-config-id="team_01">
+    
+        <div class="column is-4">
+            <div class="level">
+                <div class="level-item">
+                    <img class="image is-rounded is-128x128" src="{% static 'images/user.png' %}" alt="picture of Sandra">
+                </div>
+            </div>
+            <h5 class="title is-size-3 has-text-link">Sandra</h5>
+            <p class="subtitle is-size-5">Social Media Director</p>
+            <p class="is-size-5">As social media director I'm inchage of handeling all the question and messages that come thru our social media account.</p>
+        </div>
                 
-                <div class="column is-4">
-                    <div class="level">
-                        <div class="level-item">
-                            <img class="image is-rounded is-128x128" src="{% static 'images/user.png' %}" alt="picture of Sandra">
-                        </div>
-                    </div>
-                    <h5 class="title is-5">Sandra</h5>
-                    <p class="subtitle is-6">Social Media Director</p>
-                    <p>As social media director I'm inchage of handeling all the question and messages that come thru our social media account.</p>
+        <div class="column is-4">
+            <div class="level">
+                <div class="level-item">
+                    <img class="image is-rounded is-128x128" src="{% static 'images/user.png' %}" alt="picture of Paula">
                 </div>
-                <div class="column is-4">
-                    <div class="level">
-                        <div class="level-item">
-                            <img class="image is-rounded is-128x128" src="{% static 'images/user.png' %}" alt="picture of Paula">
-                        </div>
-                    </div>
-                    <h5 class="title is-5">Paula</h5>
-                    <p class="subtitle is-6">Adoption and Volunteer Director</p>
-                    <p>My work as it ups and it downs, but for the most part it is really great. Being able to complete the process of a dog being addopted or registering new volunteers is what makes my job so awesome.</p>
+            </div>
+            <h5 class="title is-size-3 has-text-link">Paula</h5>
+            <p class="subtitle is-size-5">Adoption and Volunteer Director</p>
+            <p class="is-size-5">My work as it ups and it downs, but for the most part it is really great. Being able to complete the process of a dog being addopted or registering new volunteers is what makes my job so awesome.</p>
+        </div>
+                
+        <div class="column is-4">
+            <div class="level">
+                <div class="level-item">
+                    <img class="image is-rounded is-128x128" src="{% static 'images/user.png' %}" alt="picture of Karin">
                 </div>
-                <div class="column is-4">
-                    <div class="level">
-                        <div class="level-item">
-                            <img class="image is-rounded is-128x128" src="{% static 'images/user.png' %}" alt="picture of Karin">
-                        </div>
-                    </div>
-                    <h5 class="title is-5">Karin</h5>
-                    <p class="subtitle is-6">Financial Director</p>
-                    <p>As financial director I'm in charge of handeling the donations and fees that come with the rescue, adoption and transportation of our rescued dogs.</p>
-                </div>
+            </div>
+            <h5 class="title is-size-3 has-text-link">Karin</h5>
+            <p class="subtitle is-size-5">Financial Director</p>
+            <p class="is-size-5">As financial director I'm in charge of handeling the donations and fees that come with the rescue, adoption and transportation of our rescued dogs.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
     
 <!------------------------ Vacancies Section ----------------->     
-    <section data-section-id="2" data-component-id="15a7_19_02_awz" data-category="vacancy" class="section">
-        <div class="container has-text-centered">
-            <h2 class="title" data-config-id="header">Vacancies</h2>
-            <p class="subtitle is-5 has-text-grey is-italic" data-config-id="description">Want to give a helping hand? Check out our vacancies.</p>
-            <div class="is-hoverable">
-                <a href="#"><span class="is-size-5">Advertising manager</span></a>
-            </div>
-        </div>    
-    </section>
-    
+<section data-section-id="2" data-component-id="15a7_19_02_awz" data-category="vacancy" class="section">
+    <div class="container has-text-centered">
+        <h2 class="title" data-config-id="header">Vacancies</h2>
+        <p class="subtitle is-5 has-text-grey is-italic">We are always looking for more volunteer team members.<br>
+            Want to give a helping hand? Please don't hesitate to <a href="{% url 'contact' %}">contact us</a></p>
+    </div>    
+</section>
 </div>
-
 {% endblock %}
