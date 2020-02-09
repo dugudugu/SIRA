@@ -39,13 +39,20 @@
   margin: 5rem 30rem;
 }
 
+.feature-dog-img{
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 200px;
+}
+
 /* Adoptable card images */
 .dog-image {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
   height: 250px;
-  margin: 0 auto;
+  margin: auto;
   
 }
 
@@ -126,10 +133,7 @@
     .adoption-steps {
       margin: 5rem 1rem;
     }
-    .dog-image, .adoption-image {
-      width: 100%
-    }
-    .detail-dog-img {
+    .detail-dog-img, .feature-dog-img {
       margin: auto;
   }
 }
