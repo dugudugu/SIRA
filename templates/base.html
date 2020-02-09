@@ -9,7 +9,7 @@
     <title>SIRA | {% block page_title %}{% endblock %}</title>
     <link rel="icon" href="{% static 'images/favicon.jpg' %}" type="image/x-icon"/ >
     
-    <link href="https://fonts.googleapis.com/css?family=Courgette|Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Handlee&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -38,6 +38,8 @@
         
         .footer {margin-top: 5rem; background-color: #1190CB;}
         .footer .buttons {justify-content: start;}
+        
+        #back2Top {overflow: hidden; z-index: 999; display: none; position: fixed; bottom: 50px; right: 10px; color: #000; font-size: 30px;}
         
         @media screen and (max-width:768px){
             .navbar-item img {max-height: 3rem; margin: 0px 10px;}
