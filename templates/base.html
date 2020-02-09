@@ -22,7 +22,7 @@
         .navbar {height: 125px;}
         .navbar-item img {max-height: 7rem; margin: 20px 40px;}
         
-        .navbar-item {margin-left: 40px;}
+        .navbar-item {margin-left: 0px;}
         a.navbar-item, .navbar-link {color: #000; font-weight: 600; font-family: Courgette; cursor: url('{% static 'icons/animal-paw-print.png' %}'), auto;}
         a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:hover, .navbar-link.is-active {background-color: transparent; color: #1190CB;}
         .navbar-end {margin-right: 50px;}
@@ -30,7 +30,7 @@
         .navbar-dropdown {margin-top: -40px;}
         .user-welcome {margin: auto; padding-right:10px;}
         
-        .donate {margin-left: -60px;}
+        .donate {margin-left: 0px;}
         .donate-badge {fill: #FFC300; max-height: 6rem;}
         .donate-text {font-size: 60px; font-weight:300;}
         
@@ -45,10 +45,12 @@
             .image img {display: block; height: 40vh; width: 100vw;}
             .navbar-item {margin-left: 0px;}
             .navbar-burger {margin-top: 20px;}
+            .navbar-end {margin-right: 0px;}
             .donate {margin-left: 0px;}
             .donate-badge {max-height: 4rem; margin-top: 10px;}
             .navbar-item.has-dropdown .navbar-dropdown {display: none;}
             .navbar-item.has-dropdown.is-active .navbar-dropdown {display: block;}
+            .navbar-dropdown .navbar-item {margin-top: 20px; margin-bottom: -20px;}
         }
         
     </style>
@@ -69,7 +71,7 @@
             <span></span>
         </div
         
-        <!--------Donation button is moved outside of the burger menu when mobile -->
+        <!-------- Donation button is moved outside of the burger menu when mobile ----->
         <div class="nabar-link donate is-hidden-desktop">
             <a class="navbar-item" href="{% url 'donate' %}">
                 <svg class="donate-badge" xmlns="http://www.w3.org/2000/svg" height="448" viewBox="0 -1 448 448" width="100">
@@ -84,9 +86,9 @@
 
     <div id="navMenubd-example" class="navbar-menu">
         <div class="navbar-start">
-            <div class="navbar-item is-active">
-                <a class="navbar-item" href="/">Home</a>
-            </div>
+            
+            <a class="navbar-item" href="/">Home</a>
+            
             <div class="navbar-item has-dropdown is-hoverable">
                 <div class="navbar-link">About</div>
                 <div class="navbar-dropdown">
@@ -147,6 +149,7 @@
             </div>
             {% endif %}
             
+            <!-------- Donation button visable for navbar on devices => 1024px -->
             <div class="nabar-link donate is-hidden-touch">
                 <a class="navbar-item" href="{% url 'donate' %}">
                     <svg class="donate-badge" xmlns="http://www.w3.org/2000/svg" height="448" viewBox="0 -1 448 448" width="100">
@@ -182,6 +185,9 @@
 <div class="image">
 {% block hero-image %}{% endblock %}
 </div>
+
+<!-- Back to top button -->
+<a id="back2Top" title="Back to top" href="#"><i class="fas fa-arrow-circle-up"></i></a>
    
 {% block content %}{% endblock %}
   

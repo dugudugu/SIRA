@@ -4,8 +4,19 @@
   --color-transperant-orange: rgba(205, 76, 17, 0.8);
 }
 
+#back2Top {
+    overflow: hidden;
+    z-index: 999;
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    color: #000;
+    font-size: 30px;
+}
 
-/*     Help section custom styling     */
+
+/* Help section custom styling */
 .help-section, .adoption {
   background-color: var(--main-color);
   margin: 3rem 0rem;
@@ -16,10 +27,9 @@
   fill: var(--color-white);
 }
 
-/*     About section custom styling     */
+/* About section custom styling */
 .about-us {
   max-height: 100vh;
-  overflow: scroll;
   margin-bottom: 3rem;
 }
 
@@ -27,7 +37,7 @@
   margin-right: 3.2rem;
 }
 
-/*     Happy Ending Counter section custom styling     */
+/* Happy Ending Counter section custom styling */
 .happy-endings-section {
   background-color: var(--color-transperant-orange);
   margin: 3rem 0rem;
@@ -83,11 +93,10 @@
       max-height: 48px;
       max-width: 48px;
     }
-    
     .about-us {
       margin-bottom: 1rem;
     }
-    .img-size {
+    .img-size .faq-icon {
       display: none;
     }
     .help-section .adoption {
@@ -110,7 +119,7 @@
     }
     .adoption-steps {
       margin: 5rem 1rem;
-}
+    }
     
 }
 
