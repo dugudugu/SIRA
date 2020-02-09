@@ -4,45 +4,67 @@
 
 {% block content %}
 <div class="container is-fluid" id="content">
+<section class="section">
+    <div class="container">
+        <h2 class="title has-text-centered">Dogs</h2>
+        
+        <h5 class="subtitle has-text-centered">Showing {{ page_obj.start_index }} to {{ page_obj.end_index }} of {{ page_obj.paginator.count }} dogs</h5>
+        
+        <!-------- Card to view all dogs -->
+        <div class="columns is-multiline">
 
-    <section data-section-id="3" data-component-id="15a7_13_01_awz" data-category="all dogs" class="section">
-        <div class="container">
-            <h2 class="title has-text-centered" data-config-id="header">Dogs</h2>
-            <h5 class="subtitle has-text-centered">Showing 1234563 to 1234654 of 132416 dogs</h5>
-
-            <!-------- Card to view all dogs -->
-
-            <div class="columns is-multiline">
-
-                {% for dog in dogs %}
-                <div class="column is-3-desktop is-1-mobile">
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="dog-image image" style="background-image: url('{{ MEDIA_URL }}{{ dog.dog_image1 }}')"></figure>
-                        </div>
-                        <div class="card-content has-text-centered">
-                            {% if dog.status == True %}
-                            <a class="button is-success is-rounded" disabled><span class="icon is-small"><i class="fas fa-heart"></i></span><span>for adoption</span></a> 
-                            {% elif dog.status == False %}
-                            <a class="button is-danger is-rounded" disabled><span class="icon is-small"><i class="fas fa-heart"></i></span><span>adopted</span></a> 
-                            {% endif %}
-                            <br>
-                            <br>
-                            <h1 class="title is-size-3-desktop is-size-5-mobile has-text-centered">{{ dog.name }}</h1>
-                            <p class="is-size-5-desktop is-size-7-mobile">{{ dog.age }}</p>
-                            <p class="is-size-5-desktop is-size-7-mobile">{{ dog.breed }}</p>
-                            <p class="is-size-5-desktop is-size-7-mobile">{{ dog.sex }}</p>
-                            <p class="is-size-5-desktop is-size-7-mobile">{{ dog.size }}</p>
-                            <br>
-                            <a class="button is-info is-outlined" href="{% url 'dog_details' dog.id %}">Read more</a>
-                        </div>
+            {% for dog in dogs %}
+            <div class="column is-3">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="dog-image image" style="background-image: url('{{ MEDIA_URL }}{{ dog.dog_image1 }}')"></figure>
+                    </div>
+                    <div class="card-content has-text-centered">
+                    {% if dog.status == True %}
+                    <a class="button is-success is-rounded" disabled><span class="icon is-small"><i class="fas fa-heart"></i></span><span>for adoption</span></a> 
+                        {% elif dog.status == False %}
+                        <a class="button is-danger is-rounded" disabled><span class="icon is-small"><i class="fas fa-heart"></i></span><span>adopted</span></a> 
+                        {% endif %}
+                    <hr>    
+                    <h1 class="title is-size-3 has-text-centered has-text-link">{{ dog.name }}</h1>
+                    <hr>
+                    <p class="is-size-5">{{ dog.age }}</p>
+                    <p class="is-size-5">{{ dog.breed }}</p>
+                    <p class="is-size-5">{{ dog.sex }}</p>
+                    <p class="is-size-5">{{ dog.size }}</p>
+                    <br>
+                    <a class="button is-info is-outlined" href="{% url 'dog_details' dog.id %}">Read more</a>
                     </div>
                 </div>
-                {% endfor %}
             </div>
-
+            {% endfor %}
         </div>
-    </section>
+        <br>
+        
+        <!-------- Page Pagination -->   
+        {% if is_paginated %}
+        <div class="is-medium has-text-centered" role="navigation" aria-label="pagination">
+            {% if page_obj.has_previous %}
+            <a class="button is-rounded is-info is-outlined" href="?page=1"><strong>First</strong></a>
+            <a class="button is-rounded is-info is-outlined" href="?page={{ page_obj.previous_page_number }}"><strong>Previous</strong></a> 
+            {% endif %} 
+                    
+            {% for num in page_obj.paginator.page_range %} 
+                {% if page_obj.number == num %}
+                <a class="button is-rounded is-info" href="?page={{ num }}"><strong>{{ num }}</strong></a> 
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %} 
+                <a class="button is-rounded is-info is-outlined" href="?page={{ num }}"><strong>{{ num }}</strong></a>
+                {% endif %} 
+            {% endfor %}
+                    
+            {% if page_obj.has_next %}
+            <a class=" button is-rounded is-info is-outlined" href="?page={{ page_obj.next_page_number }}"><strong>Next</strong>t</a>
+            <a class=" button is-rounded is-info is-outlined" href="?page={{ page_obj.paginator.num_pages }}"><strong>Last</strong></a> 
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</section>
 </div>
 
 

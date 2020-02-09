@@ -9,6 +9,7 @@ class DogListView(ListView):
     model = Adoptable
     template_name = 'adoptable.html'
     context_object_name = 'dogs'
+    paginate_by = 8
 
 
 # View for dog details
