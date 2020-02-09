@@ -9,6 +9,7 @@ class HappyEndingListView(ListView):
     model = HappyEnding
     template_name = "happy-endings.html"
     context_object_name = 'dogs'
+    paginate_by = 6
 
 # Authenticated User Views
 # View for posting new dog that has been adopted
