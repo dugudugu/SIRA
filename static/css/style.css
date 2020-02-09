@@ -1,30 +1,21 @@
+/* General Custom Styling */
+
 :root{
   --main-color: #1190CB;
   --color-white: #fff;
   --color-transperant-orange: rgba(205, 76, 17, 0.8);
 }
 
-#back2Top {
-    overflow: hidden;
-    z-index: 999;
-    display: none;
-    position: fixed;
-    bottom: 50px;
-    right: 10px;
-    color: #000;
-    font-size: 30px;
+.white-svg{
+  fill: var(--color-white);
 }
 
-
+/* Custom stylng for each section*/
 /* Help section custom styling */
 .help-section, .adoption {
   background-color: var(--main-color);
   margin: 3rem 0rem;
   padding: 2rem 0rem;
-}
-
-.white-svg{
-  fill: var(--color-white);
 }
 
 /* About section custom styling */
@@ -48,40 +39,69 @@
   margin: 5rem 30rem;
 }
 
+/* Adoptable card images */
 .dog-image {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
   height: 250px;
-  width: 300px;
   margin: 0 auto;
   
 }
 
+/* Dog detail page styling */
 .main-dog-img {
   background-size: contain;
   background-repeat: no-repeat;
-  height: 400px;
-  width: 480px;
-  margin: 20px 40px;
+  height: 500px;
+  width: 500px;
 }
 
 
 .detail-dog-img {
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center center;
-  height: 150px;
-  width: 150px;
-  margin-left: 40px;
+  height: 200px;
+  
 }
 
+/* Basic modal styling cedits to Marcos Oliveira */
+/* Code has been adjust to fit apllication */
+.modal-img {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 100px;
+}
+.item-slide {
+  display: none;
+  box-sizing: border-box;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: var(--color-white);
+  font-size: 20px;
+  transition: 0.6s ease;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+/*         */
 .adoption-image {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
   height: 350px;
-  width: 400px;
   margin: 0 auto;
 }
 
@@ -109,7 +129,11 @@
     .dog-image, .adoption-image {
       width: 100%
     }
+    .detail-dog-img {
+      margin: auto;
+  }
 }
+
 
 
 @media screen and (min-width:769px){
@@ -120,12 +144,9 @@
     .adoption-steps {
       margin: 5rem 1rem;
     }
+
     
 }
-
-
-
-
 
 @media screen and (min-width: 1088px) {
     .svg-size {
@@ -133,3 +154,10 @@
       width: 128px;
     }
 }
+
+
+
+
+
+
+
