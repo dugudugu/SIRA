@@ -2,14 +2,23 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView, TemplateView
 from .models import Adoptable
 from .forms import DogForm
+from .filters import DogsFilter
 
     
 # Views for all dogs
 class DogListView(ListView):
     model = Adoptable
-    template_name = 'adoptable.html'
     context_object_name = 'dogs'
     paginate_by = 8
+    template_name = 'adoptable.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['filter'] = DogsFilter(self.request.GET, queryset=self.get_queryset())
+        return context
+
+
+
 
 
 # View for dog details

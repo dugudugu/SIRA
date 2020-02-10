@@ -10,10 +10,24 @@
         
         <h5 class="subtitle has-text-centered">Showing {{ page_obj.start_index }} to {{ page_obj.end_index }} of {{ page_obj.paginator.count }} dogs</h5>
         
+        <!-------- Filter to sort all the available dogs -->
+        <div class="container is-fluid">
+            <div class="control">
+                <div class="has-text-centered has-text-info is-10">
+                    <form method="GET" class="is-10">
+                        {{ filter.form }}
+                        
+                        <input class="button is-info" type="submit" value="Filter">
+                    </form>
+                </div>
+                <br>
+            </div>
+        </div>
+        
         <!-------- Card to view all dogs -->
         <div class="columns is-multiline">
 
-            {% for dog in dogs %}
+            {% for dog in filter.qs %}
             <div class="column is-3">
                 <div class="card">
                     <div class="card-image">
