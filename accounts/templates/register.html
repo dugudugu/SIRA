@@ -16,7 +16,7 @@
         <div class="container has-text-centered">
             <div class="columns is-centered is-mobile">
                 <div class="column is-12-mobile is-4-desktop">
-                    <form action="{% url 'login' %}" method="POST">
+                    <form method="POST">
                         {% csrf_token %}
                         
                         {% for non_field_error in form.non_field_errors %}
@@ -35,13 +35,13 @@
                         </div>
                         {% endfor %}
                         
+                        
                         <div class="field">
                             <div class="control">
                                 <input class="button is-info is-fullwidth" type="submit" value="Sign up!">
                             </div>
                         </div>
                     </form>
-                    
                 </div>
             </div>
         </div>
