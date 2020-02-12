@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block page_title %}Logout{% endblock %} 
+
+{% block content %}
+    
+<div class="container is-fluid" id="content">
+<section class="section">
+    <div class="container">
+        <h2 class="title has-text-centered">You have been logged out</h2>
+        <p class="subtitle is-size-6 has-text-centered is-italic has-tect-grey"><a href="{% url 'login' %}">Log in Again</a></p>
+    </div>
+</section>
+</div>
+
+
+{% endblock %}
