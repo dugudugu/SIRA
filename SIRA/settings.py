@@ -125,7 +125,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTHENTICATION_BACKENDS = {
     'django.contrib.auth.backends.ModelBackend',
-    'accounts.AuthBackends.EmailAuthBackend',
 }
 
 # Internationalization
@@ -175,6 +174,7 @@ MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER= os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD= os.environ.get('EMAIL_HOST_PASSWORD')
@@ -186,3 +186,4 @@ STRIPE_SECRET = os.environ.get('STRIPE_SECRET')
 
 
 LOGIN_REDIRECT_URL = 'home'
+
