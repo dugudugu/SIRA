@@ -6,10 +6,10 @@
 
 {% block content %}
 
-<div class="container is-fluid is-mobile" id="content">
-    <section data-section-id="1" data-component-id="15a7_9_03_awz" data-category="contact" class="section">
+<div class="container is-fluid is-mobile">
+    <section class="section">
         <div class="container">
-            <h2 class="title has-text-centered" data-config-id="header">Contact Us</h2>
+            <h2 class="title has-text-centered">Contact Us</h2>
             <p class="subtitle is-size-6 has-text-centered is-italic has-tect-grey">If you have any questions feel free to contact us</p>
         </div>
 
@@ -17,23 +17,22 @@
             <div class="columns is-centered is-mobile">
                 <div class="column is-10-mobile is-6-desktop">
                     <form method="post">
-                        {% csrf_token %}
+                    {% csrf_token %}
 
-                        {% for field in form %}
+                    {% for field in form %}
                         <div class="field">
                             <div class="control">
                                 <label for="{{ field.id_for_label }}" class="label is-size-5-desktop is-size-7-mobile">{{ field.label }}</label>
                                 {{ field }}
-                                
                             </div>
                         </div>
                         {% endfor %}
                         
-                        <div class="field">
-                            <div class="control">
-                                <input class="button is-info is-fullwidth" type="submit" value="Send!">
-                            </div>
+                    <div class="field">
+                        <div class="control">
+                            <input class="button is-info is-fullwidth" type="submit" value="Send!">
                         </div>
+                    </div>
                     </form>
                 </div>
             </div>

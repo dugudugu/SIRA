@@ -1,8 +1,8 @@
 from SIRA import settings
 from django.core.mail import send_mail
+from django.contrib import messages
 from django.template.loader import get_template
 from django.shortcuts import render, redirect
-
 from .forms import ContactForm
 
 
@@ -30,9 +30,9 @@ def contact(request):
             }
             
             contact_message = get_template('contact_message.txt').render(context)
-            
             send_mail(subject, contact_message, from_email, to_mail,  fail_silently=True)
-           
+            messages.success(request, 'Thank you for contacting SIRA!')   
+            return redirect('home')
             
     form_view = {
         "form": form, 
