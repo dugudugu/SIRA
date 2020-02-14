@@ -133,7 +133,8 @@
         </div>
 
         <div class="navbar-end">
-
+            <a class="navbar-item" href="{% url 'search' %}">Search</a>
+            
             {% if user.is_authenticated %}
             <div class="navbar-item">
                 <div class="field is-grouped">
@@ -175,6 +176,7 @@
     </div>
 </nav>
 
+<!-- Django Messages -->
 {% if messages %}
     {% for message in messages %}
     <div class="notification is-{{ message.tags }} is-light has-text-centered">
@@ -183,7 +185,7 @@
     {% endfor %}
 {% endif %}
     
-
+<!-- Hero-Images -->
 <div class="image">
 {% block hero-image %}{% endblock %}
 </div>

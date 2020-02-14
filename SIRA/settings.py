@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     'donation',
     'storages',
     'accounts',
+    'search',
+    'pages',
 ]
 
 MIDDLEWARE = [
