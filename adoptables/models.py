@@ -1,5 +1,16 @@
 from django.db import models
+from django.db.models import Q
 from django.urls import reverse
+
+
+class DogSearchManager(models.Manager):
+    def search(self, query=None):
+        qs = self.get_queryset()
+        if query is not None:
+            or_lookup = (Q(name__icontains=query)
+                        )
+            qs = qs.filter(or_lookup).distinct() # distinct() is often necessary with Q lookups
+        return qs
 
 
 # Model for adoptable dog instance
@@ -40,6 +51,7 @@ class Adoptable(models.Model):
     dog_image3 = models.ImageField(upload_to='dog_images/', blank=True, null=True)
     dog_image4 = models.ImageField(upload_to='dog_images/', blank=True, null=True)
 
+    objects = DogSearchManager()
         
     def __str__(self):
         return self.name

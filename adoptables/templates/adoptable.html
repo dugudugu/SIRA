@@ -30,6 +30,11 @@
             {% for dog in filter.qs %}
             <div class="column is-3">
                 <div class="card">
+                    {% if dog.status == True %}
+                    <a class="button is-success is-rounded" disabled><span class="icon is-small"><i class="fas fa-heart"></i></span><span>for adoption</span></a> 
+                        {% elif dog.status == False %}
+                        <a class="button is-danger is-rounded" disabled><span class="icon is-small"><i class="fas fa-heart"></i></span><span>adopted</span></a> 
+                    {% endif %}
                     <div class="card-image">
                         <figure class="dog-image image" style="background-image: url('{{ MEDIA_URL }}{{ dog.dog_image1 }}')"></figure>
                     </div>
@@ -38,7 +43,7 @@
                     <a class="button is-success is-rounded" disabled><span class="icon is-small"><i class="fas fa-heart"></i></span><span>for adoption</span></a> 
                         {% elif dog.status == False %}
                         <a class="button is-danger is-rounded" disabled><span class="icon is-small"><i class="fas fa-heart"></i></span><span>adopted</span></a> 
-                        {% endif %}
+                    {% endif %}
                     <hr>    
                     <h1 class="title is-size-3 has-text-centered has-text-link">{{ dog.name }}</h1>
                     <hr>

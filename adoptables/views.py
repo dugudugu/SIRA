@@ -18,9 +18,6 @@ class DogListView(ListView):
         return context
 
 
-
-
-
 # View for dog details
 class DogDetailView(DetailView):
     model = Adoptable
