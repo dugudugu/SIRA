@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load class_name %}
+{% block page_title %}Search{% endblock %} 
+
+{% block content %}
+
+
+<div class="container is-fluid" id="content">
+<section class="section">
+    <div class="container">
+        <h2 class="title has-text-centered">Search</h2>
+        <p class="subtitle is-size-6 has-text-centered is-italic has-tect-grey">{{ count }} results for {{ query }}</p>
+    </div>
+</section>
+
+<section class="section">
+<div class="container">
+    <div class="columns is-centered">
+        
+    {% for dog in object_list %}
+    {% with dog|class_name as class %}
+        {% if class == 'Adoptable' %}
+        <div class="column is-3 has-text-centered">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="dog-image image" style="background-image: url('{{ MEDIA_URL }}{{ dog.dog_image1 }}')"></figure>
+                </div>
+                <h1 class="title is-size-3 has-text-centered has-text-link"><a href="{{ dog.get_absolute_url }}">{{ dog.name }}</a></h1>
+                {% if dog.status == True %}
+                    <a class="button is-success is-rounded" disabled><span class="icon is-small"><i class="fas fa-heart"></i></span><span>for adoption</span></a> 
+                    {% elif dog.status == False %}
+                    <a class="button is-danger is-rounded" disabled><span class="icon is-small"><i class="fas fa-heart"></i></span><span>adopted</span></a> 
+                {% endif %}
+                <br><br>
+            </div>
+        </div>
+    
+        {% elif class == 'HappyEnding' %}
+        <div class="column is-3 has-text-centered">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="dog-image image" style="background-image: url('{{ MEDIA_URL }}{{ dog.adoption_image }}')"></figure>
+                </div>
+                <h1 class="title is-size-3 has-text-centered has-text-link">{{ dog.name }}</h1>
+                {% if dog.status == True %}
+                    <a class="button is-success is-rounded" disabled><span class="icon is-small"><i class="fas fa-heart"></i></span><span>for adoption</span></a> 
+                    {% elif dog.status == False %}
+                    <a class="button is-danger is-rounded" disabled><span class="icon is-small"><i class="fas fa-heart"></i></span><span>adopted</span></a> 
+                {% endif %}
+                <br><br>
+            </div>
+        </div>
+        
+        {% else %}
+        <div class='column is-8'>
+            <a href='c'>{{ dog }} | {{ dog|class_name }}</a>
+        </div>
+        {% endif %}
+    {% endwith %}
+    
+    {% empty %}
+    <div class="container">
+        <div class="columns is-centered is-mobile">
+            <div class="column is-10-mobile is-4-desktop">
+                <form method="GET">
+                    <div class="field is-grouped">
+                        <input class="input" type="text" name="q" placeholder="Search">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    {% endfor %}
+    </div>
+</div>
+</section>
+</div>
+{% endblock %}
