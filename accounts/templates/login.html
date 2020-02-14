@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load widget_tweaks %}
 {% block page_title %}Login{% endblock %} 
 
 {% block content %}
@@ -9,11 +10,11 @@
     <div class="container">
         <h2 class="title has-text-centered">Log in</h2>
         <p class="subtitle is-size-6 has-text-centered is-italic has-tect-grey">Administrators ONLY!</p>
-        <p class="subtitle is-size-6 has-text-centered is-italic has-tect-grey"><a href="{% url 'password_reset %}">Forgot my password?</a></p>
+        <p class="subtitle is-size-6 has-text-centered is-italic has-tect-grey"><a href="{% url 'password_reset' %}">Forgot my password?</a></p>
     </div>
 </section>
 
-<section data-section-id="2" data-component-id="15a7_12_02_awz" data-category="sign-in" class="section">
+<section class="section">
     <div class="container has-text-centered">
         <div class="columns is-centered is-mobile">
             <div class="column is-12-mobile is-4-desktop">
@@ -22,9 +23,17 @@
                         
                     <div class="field">
                         <div class="control">
+                            <label for="id_username" class="label is-size-5-desktop is-size-7-mobile">Username</label>
+                            <div class="control has-icons-left has-icons-right">
+                                {{ form.username|add_class:'input'|attr:"placeholder:Enter your username" }} 
+                                <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
+                            </div>
                             
-                            {{ form }}
-                                
+                            <label for="id_password" class="label is-size-5-desktop is-size-7-mobile">Password</label>
+                            <div class="control has-icons-left has-icons-right">
+                                {{ form.password|add_class:'input'|attr:"placeholder:Password" }}
+                                <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
+                            </div>
                         </div>
                     </div>
                     
