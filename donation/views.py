@@ -30,18 +30,18 @@ def DonationView(request):
                 )
                 
             except stripe.error.CardError:
-                messages.error(request, "Your card was declined!")
+                messages.warning(request, "Your card was declined!")
                 
             if donator.paid:
-                messages.error(request, "Thank you for your donation!")
+                messages.success(request, "Thank you for your donation!")
                 return redirect(reverse('home'))
                 
             else:
-                messages.error(request, "Unable to take your donation")
+                messages.warning(request, "Unable to take your donation")
                 
         else:
             print(payment_form.errors)
-            messages.error(request, "We are unable to take your donation with the card you have")
+            messages.warning(request, "We are unable to take your donation with the card you have")
             
     else:
         donation_form = DonationForm()

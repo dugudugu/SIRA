@@ -177,8 +177,8 @@
 
 {% if messages %}
     {% for message in messages %}
-    <div class="notification is-{{ message.tags }} has-text-centered">
-    <div class="title is-size-1-desktop is-size-3-mobile">{{ message }}</div>
+    <div class="notification is-{{ message.tags }} is-light has-text-centered">
+    <div class="title is-size-2-desktop is-size-4-mobile">{{ message }}</div>
     </div>
     {% endfor %}
 {% endif %}
