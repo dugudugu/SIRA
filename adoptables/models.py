@@ -37,7 +37,7 @@ class Adoptable(models.Model):
     SITUATION_CHOICES = [(AT_FOSTER_FAMILY, 'At foster family'), (IN_SHELTER, 'In shelter'),]
     situation = models.CharField(max_length=100, choices=SITUATION_CHOICES, default='In shelter')
     
-    status = models.BooleanField(verbose_name='For adoption')
+    status = models.BooleanField(verbose_name='For adoption', default="True")
     
     SPAIN = 'Spain'
     THE_NETHERLANDS = 'The Netherlands'
