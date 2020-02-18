@@ -123,7 +123,7 @@ select.filter-size {
 
 
 /*     Media queries     */
-@media only screen and (max-width: 768px){
+@media (max-width: 768px){
     .svg-size {
       max-height: 48px;
       max-width: 48px;
@@ -148,7 +148,7 @@ select.filter-size {
 
 
 
-@media only screen and (min-width:769px){
+@media (min-width:769px){
     .svg-size {
       height: 96px;
       width: 96px;
@@ -159,7 +159,7 @@ select.filter-size {
     
 }
 
-@media only screen and (min-width: 1088px) {
+@media (min-width: 1088px) {
     .svg-size {
       height: 128px;
       width: 128px;
