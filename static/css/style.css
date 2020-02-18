@@ -22,6 +22,7 @@
 .about-us {
   max-height: 100vh;
   margin-bottom: 3rem;
+  overflow-y: scroll;
 }
 
 .about-us-text {
@@ -109,7 +110,7 @@ select.filter-size {
 }
 
 
-/*         */
+/*  Adoption card images */
 .adoption-image {
   background-size: contain;
   background-repeat: no-repeat;
@@ -118,8 +119,10 @@ select.filter-size {
   margin: 0 auto;
 }
 
-
-
+/*  Footer custom styling    */
+.card-margin {
+  margin: 2rem;
+}
 
 
 /*     Media queries     */

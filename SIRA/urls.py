@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from home_page.views import homepage
+from pages.views import terms_view, privacy_view
 from search.views import PostSearchView
 from about import urls
 from get_involved import urls
@@ -31,6 +32,8 @@ from donation import urls
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', homepage, name='home'),
+    url(r'^terms-and-conditions/$', terms_view, name='terms'),
+    url(r'^privacy/$', privacy_view, name='privacy'),
     url(r'^search/', PostSearchView.as_view(), name='search'),
     url(r'^about/', include('about.urls')),
     url(r'^get_involved/', include('get_involved.urls')),

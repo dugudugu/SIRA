@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'storages',
     'accounts',
     'search',
+    'pages',
 
 ]
 
