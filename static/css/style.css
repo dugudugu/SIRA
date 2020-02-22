@@ -50,7 +50,7 @@
 }
 /* Filter page styling */
 
-.filter-size {
+select.filter-size {
 	margin-right: 15px;
 	max-width: max-content;
 	vertical-align: middle;
