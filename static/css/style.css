@@ -1,170 +1,157 @@
-/* General Custom Styling */
+/* General SVG styling */
 
-:root{
-  --main-color: #1190CB;
-  --color-white: #fff;
-  --color-transperant-orange: rgba(205, 76, 17, 0.8);
+.white-svg {
+	fill: #fff;
 }
+/* Custom styling for About page */
 
-.white-svg{
-  fill: var(--color-white);
+/* Help section */
+
+.help-section,
+.adoption {
+	background-color: #1190CB;
+	margin: 3rem 0;
+	padding: 2rem 0;
 }
-
-/* Custom stylng for each section*/
-/* Help section custom styling */
-.help-section, .adoption {
-  background-color: var(--main-color);
-  margin: 3rem 0rem;
-  padding: 2rem 0rem;
-}
-
 /* About section custom styling */
+
 .about-us {
-  max-height: 100vh;
-  margin-bottom: 3rem;
-  overflow-y: scroll;
+	margin-bottom: 3rem;
+	max-height: 100vh;
+	overflow-y: scroll;
 }
-
 .about-us-text {
-  margin-right: 3.2rem;
+	margin-right: 3.2rem;
 }
-
 /* Happy Ending Counter section custom styling */
+
 .happy-endings-section {
-  background-color: var(--color-transperant-orange);
-  margin: 3rem 0rem;
-  padding: 2rem 0rem;
+	background-color: #cd4b10;
+	margin: 3rem 0;
+	padding: 2rem 0;
 }
-
 .adoption-steps {
-  margin: 5rem 30rem;
+	margin: 5rem 30rem;
 }
-
-.feature-dog-img{
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 200px;
-  width: 200px;
+.feature-dog-img {
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 200px;
+	width: 200px;
 }
-
 /* Adoptable card images */
+
 .dog-image {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  height: 250px;
-  margin: auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 250px;
+	margin: auto;
 }
-
 /* Filter page styling */
-select.filter-size {
-  max-width: max-content;
-  margin-right: 15px;
-  vertical-align: middle;
-}
 
+.filter-size {
+	margin-right: 15px;
+	max-width: max-content;
+	vertical-align: middle;
+}
 /* Dog detail page styling */
+
 .main-dog-img {
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 500px;
-  width: 500px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 500px;
+	width: 500px;
 }
-
-
 .detail-dog-img {
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 200px;
-  
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 200px;
 }
-
 /* Basic modal styling cedits to Marcos Oliveira */
+
 /* Code has been adjust to fit apllication */
+
 .modal-img {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  margin-top: 100px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-top: 100px;
 }
 .item-slide {
-  display: none;
-  box-sizing: border-box;
+	box-sizing: border-box;
+	display: none;
 }
-
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: var(--color-white);
-  font-size: 20px;
-  transition: 0.6s ease;
-}
-
+.prev,
 .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 20px;
+	margin-top: -50px;
+	padding: 16px;
+	position: absolute;
+	top: 50%;
+	-webkit-transition: all 0.6s ease;
+	-moz-transition: all 0.6s ease;
+	-o-transition: all 0.6s ease;
+	transition: 0.6s ease;
+	width: auto;
 }
-
-
+.next {
+	border-radius: 3px 0 0 3px;
+	right: 0;
+}
 /*  Adoption card images */
+
 .adoption-image {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  height: 350px;
-  margin: 0 auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 350px;
+	margin: 0 auto;
 }
-
 /*  Footer custom styling    */
+
 .card-margin {
-  margin: 2rem;
+	margin: 2rem;
 }
-
-
 /*     Media queries     */
-@media (max-width: 768px){
-    .svg-size {
-      max-height: 48px;
-      max-width: 48px;
-    }
-    .about-us {
-      margin-bottom: 1rem;
-    }
-    .img-size {
-      display: none;
-    }
-    .help-section .adoption {
-      max-height: 40vh;
-      overflow-y: scroll;
-    }
-    .adoption-steps {
-      margin: 5rem 1rem;
-    }
-    .detail-dog-img, .feature-dog-img {
-      margin: auto;
-  }
+
+@media (max-width: 768px) {
+	.svg-size {
+		max-height: 48px;
+		max-width: 48px;
+	}
+	.about-us {
+		margin-bottom: 1rem;
+	}
+	.img-size {
+		display: none;
+	}
+	.help-section .adoption {
+		max-height: 40vh;
+		overflow-y: scroll;
+	}
+	.adoption-steps {
+		margin: 5rem 1rem;
+	}
+	.detail-dog-img,
+	.feature-dog-img {
+		margin: auto;
+	}
 }
-
-
-
-@media (min-width:769px){
-    .svg-size {
-      height: 96px;
-      width: 96px;
-    }
-    .adoption-steps {
-      margin: 5rem 1rem;
-    }
-    
+@media (min-width: 769px) {
+	.svg-size {
+		height: 96px;
+		width: 96px;
+	}
+	.adoption-steps {
+		margin: 5rem 1rem;
+	}
 }
-
 @media (min-width: 1088px) {
-    .svg-size {
-      height: 128px;
-      width: 128px;
-    }
+	.svg-size {
+		height: 128px;
+		width: 128px;
+	}
 }
