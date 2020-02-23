@@ -9,11 +9,11 @@
     <title>SIRA | {% block page_title %}{% endblock %}</title>
     <link rel="icon" href="{% static 'images/favicon.jpg' %}" type="image/x-icon"/ >
     
-    <link href="https://fonts.googleapis.com/css?family=Courgette|Handlee&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link async href="https://fonts.googleapis.com/css?family=Courgette|Handlee&display=swap" rel="stylesheet">
+    <link async rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link async rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script async src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     
     {% block head_js %}{% endblock head_js %}
     {% block meta_content %}{% endblock %}
@@ -65,7 +65,7 @@
     
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item" href="/"><img src="{% static 'images/logo.jpg' %}" alt="SIRA logo"></a>
+        <a class="navbar-item" href="/"><img data-lazy="{% static 'images/logo.jpg' %}" alt="SIRA logo"></a>
 
 
         <div class="navbar-burger burger" data-target="navMenubd-example">
@@ -202,7 +202,7 @@
     <div class="container has-text-centered">
         <div class="level">
             <div class="level-item">
-                <img class="image is-128x128" src="{% static 'images/inverted-logo.jpg' %}" alt="SIRA-logo" data-config-id="image">
+                <img class="image is-128x128" data-lazy="{% static 'images/inverted-logo.jpg' %}" alt="SIRA-logo" data-config-id="image">
             </div>
         </div>
         <div class="columns is-centered has-text-white">
@@ -241,8 +241,9 @@
     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
-<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/custom-jquery.js' %}"></script>
+<script defer type="text/javascript" src="{% static 'js/custom-jquery.js' %}"></script>
+<script defer type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+
     
 </body>
 </html>

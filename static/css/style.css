@@ -3,6 +3,27 @@
 .white-svg {
 	fill: #fff;
 }
+
+/* Lzay Loading Image Styling */
+img {
+	transform: translateX(50%);
+	opacity: 0;
+	-webkit-transition: opacity 0.5s ease-in-out;
+	-moz-transition: opacity 0.5s ease-in-out;
+	-o-transition: opacity 0.5s ease-in-out;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.fade {
+	transform: translateX(0);
+	opacity: 1.0;
+	-webkit-transition: opacity 0.5s ease-in-out;
+	-moz-transition: opacity 0.5s ease-in-out;
+	-o-transition: opacity 0.5s ease-in-out;
+	transition: opacity 0.5s ease-in-out;
+}
+
+
 /* Custom styling for About page */
 
 /* Help section */
@@ -26,7 +47,7 @@
 /* Happy Ending Counter section custom styling */
 
 .happy-endings-section {
-	background-color: #cd4b10;
+	background-color: #8A320A;
 	margin: 3rem 0;
 	padding: 2rem 0;
 }

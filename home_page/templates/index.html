@@ -7,7 +7,7 @@
   name="description"           
   content="Stiching SIRA is a non-profit orginazation that help find rescue dog in Spain a forever home.">
 {% endblock %}
-{% block hero-image %}<img src="{% static 'images/hero-image14.jpg' %}" alt="hero-image-homepage"></img>{% endblock %}
+{% block hero-image %}<img data-lazy="{% static 'images/hero-image14.jpg' %}" alt="hero-image-homepage"></img>{% endblock %}
 
 {% block content %}
 
@@ -78,7 +78,7 @@
         <div class="columns is-vcentered">
           <div class="column is-4 has-text-centered about-us-text is-offset-1">
             <h2 class="title is-1 is-spaced has-text-centered">About Us</h2>
-            <img class="image is-96x96 is-inline-block" src="{% static 'images/logo.jpg' %}" alt="SIRA-logo">
+            <img class="image is-96x96 is-inline-block" data-lazy="{% static 'images/logo.jpg' %}" alt="SIRA-logo">
             <p class="subtitle" data-config-id="description">Stichting I Respect Animals also know as <strong>SIRA</strong> is a non-profit orginazation in The Netherlands.</p>
             <p class="subtitle" data-config-id="description">Sandra and Cees van Dijk together with Suzanne van der Hout, founded <strong>SIRA</strong> in November of 2016.</p>
             <p class="subtitle" data-config-id="description">Our mission is to bring awerness and support to saving the forgotten, homeless petd of Spain.</p>
@@ -87,7 +87,7 @@
             <a class="button is-info is-outlined" href="{% url 'happy_endings' %}" data-config-id="primary-action">Happy Endings</a>
           </div>
           <div class="column is-5">
-            <img class="img-size" src="{% static 'images/about_us.jpg' %}" alt="About Us image">
+            <img class="img-size" data-lazy="{% static 'images/about_us.jpg' %}" alt="About Us image">
           </div>
         </div>
       </div>
