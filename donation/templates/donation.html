@@ -12,6 +12,12 @@
 <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}
 
+{% block meta_content %}
+<meta
+  name="description"           
+  content="Please make a donation using our donation page, to help more stray and/or rescue dogs in Spain.">
+{% endblock %}
+
 {% block hero-image %}<img src="{% static 'images/hero-image2.jpg' %}" alt="hero-image-donation-page"></img>{% endblock %}
 
 {% block content %}

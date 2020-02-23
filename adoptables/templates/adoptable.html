@@ -3,8 +3,14 @@
 {% load widget_tweaks %}
 {% block page_title %}All dogs{% endblock %}
 
+{% block meta_content %}
+<meta
+  name="description"           
+  content="In the adopt page you will fins all the dogs that are available for adoption. Please note that not all dogs are located at the same location.">
+{% endblock %}
+
 {% block content %}
-<div class="container is-fluid" id="content">
+<div class="container is-fluid">
 <section class="section">
     <div class="container">
         <h2 class="title has-text-centered">Dogs</h2>

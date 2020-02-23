@@ -2,13 +2,19 @@
 {% load staticfiles %}
 {% block page_title %}Meet the Team{% endblock %}
 
+{% block meta_content %}
+<meta
+  name="description"           
+  content="Meet the team behind the non-profit organization called SIRA">
+{% endblock %}
+
 {% block hero-image %}<img src="{% static 'images/hero-image7.jpg' %}" alt="hero-image-sira-team-page"></img>{% endblock %}
 
 {% block content %}
 
-<div class="container is-fluid" id="content">
+<div class="container is-fluid">
 <!------------------------ SIRA Team Section -----------------> 
-<section data-section-id="1" data-component-id="15a7_7_01_awz" data-category="sira-team" class="section">
+<section class="section">
     <div class="container has-text-centered">
         <h2 class="title" data-config-id="header">Meet the Team</h2>
         <p class="subtitle is-5 has-text-grey is-italic" data-config-id="description">We are the humans that made this whole thing possible</p>
@@ -51,7 +57,7 @@
 </section>
     
 <!------------------------ Vacancies Section ----------------->     
-<section data-section-id="2" data-component-id="15a7_19_02_awz" data-category="vacancy" class="section">
+<section class="section">
     <div class="container has-text-centered">
         <h2 class="title" data-config-id="header">Vacancies</h2>
         <p class="subtitle is-5 has-text-grey is-italic">We are always looking for more volunteer team members.<br>
