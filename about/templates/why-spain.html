@@ -8,7 +8,13 @@
   content="On this page you will find the story, why Sira is choosing to save the dogs in Spain">
 {% endblock %}
 
-{% block hero-image %}<img src="{% static 'images/hero-image3.jpg' %}" alt="hero-image-why-spain-page"></img>{% endblock %}
+{% block hero-image %}
+<picture>
+    <source srcset="{% static 'images/hero-image-why.webp' %}" type="image/webp">
+    <source srcset="{% static 'images/hero-image-why.jpg' %}" type="image/jpg">
+    <img data-lazy="{% static 'images/hero-image-why.jpg' %}" alt="hero-image-why-spain-page"></img>
+</picture>
+{% endblock %}
 
 {% block content %}
 

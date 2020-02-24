@@ -8,7 +8,14 @@
   content="Adoption procedure for everyone that would like to or has adopted via SIRA.">
 {% endblock %}
 
-{% block hero-image %}<img src="{% static 'images/hero-image9.jpeg' %}" alt="hero-image-adoption-page"></img>{% endblock %}
+{% block hero-image %}
+<picture>
+    <source srcset="{% static 'images/hero-image-adoption.webp' %}" type="image/webp">
+    <source srcset="{% static 'images/hero-image-adoption.jpeg' %}" type="image/jpeg">
+    <img data-lazy="{% static 'images/hero-image-adoption.jpeg' %}" alt="hero-image-adoption-page"></img>
+</picture>
+{% endblock %}
+
 
 {% block content %}
 

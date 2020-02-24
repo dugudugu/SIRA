@@ -65,7 +65,13 @@
     
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item" href="/"><img data-lazy="{% static 'images/logo.jpg' %}" alt="SIRA logo"></a>
+        <a class="navbar-item" href="/">
+            <picture>
+                <source srcset="{% static 'images/logo.webp' %}" type="image/webp">
+                <source srcset="{% static 'images/logo.jpg' %}" type="image/jpeg">
+                <img data-lazy="{% static 'images/logo.jpg' %}" alt="SIRA logo">
+            </picture>
+            </a>
 
 
         <div class="navbar-burger burger" data-target="navMenubd-example">
@@ -202,7 +208,11 @@
     <div class="container has-text-centered">
         <div class="level">
             <div class="level-item">
-                <img class="image is-128x128" data-lazy="{% static 'images/inverted-logo.jpg' %}" alt="SIRA-logo" data-config-id="image">
+                <picture>
+                    <source srcset="{% static 'images/white-logo.webp' %}" type="image/webp">
+                    <source srcset="{% static 'images/white-logo.png' %}" type="image/png">
+                    <img class="image is-128x128" data-lazy="{% static 'images/white-logo.png' %}" alt="SIRA-logo" data-config-id="image">
+                </picture>
             </div>
         </div>
         <div class="columns is-centered has-text-white">

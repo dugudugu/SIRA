@@ -8,7 +8,14 @@
   content="With the contact form you will be able to contact a team of SIRA">
 {% endblock %}
 
-{% block hero-image %}<img src="{% static 'images/hero-image11.jpg' %}" alt="hero-image-contact-page"></img>{% endblock %}
+{% block hero-image %}
+<picture>
+    <source srcset="{% static 'images/hero-image-contact.webp' %}" type="image/webp">
+    <source srcset="{% static 'images/hero-image-contact.jpg' %}" type="image/jpg">
+    <img data-lazy="{% static 'images/hero-image-contact.jpg' %}" alt="hero-image-contact-page"></img>
+</picture>
+{% endblock %}
+
 
 {% block content %}
 

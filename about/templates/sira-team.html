@@ -8,7 +8,13 @@
   content="Meet the team behind the non-profit organization called SIRA">
 {% endblock %}
 
-{% block hero-image %}<img src="{% static 'images/hero-image7.jpg' %}" alt="hero-image-sira-team-page"></img>{% endblock %}
+{% block hero-image %}
+<picture>
+    <source srcset="{% static 'images/hero-image-team.webp' %}" type="image/webp">
+    <source srcset="{% static 'images/hero-image-team.jpg' %}" type="image/jpg">
+    <img data-lazy="{% static 'images/hero-image-team.jpg' %}" alt="hero-image-sira-team-page"></img>
+</picture>
+{% endblock %}
 
 {% block content %}
 

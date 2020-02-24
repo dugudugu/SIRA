@@ -2,7 +2,13 @@
 {% load staticfiles %}
 {% block page_title %}FAQs{% endblock %}
 
-{% block hero-image %}<img src="{% static 'images/hero-image6.jpg' %}" alt="hero-image-faqs-page"></img>{% endblock %}
+{% block hero-image %}
+<picture>
+    <source srcset="{% static 'images/hero-image-faqs.webp' %}" type="image/webp">
+    <source srcset="{% static 'images/hero-image-faqs.jpg' %}" type="image/jpg">
+    <img data-lazy="{% static 'images/hero-image-faqs.jpg' %}" alt="hero-image-faqs-page"></img>
+</picture>
+{% endblock %}
 
 {% block content %}
 
