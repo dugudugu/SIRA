@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/dugudugu/SIRA.svg?branch=master)](https://travis-ci.org/dugudugu/SIRA) 
-[![Known Vulnerabilities](https://snyk.io/test/github/dugudugu/SIRA/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/dugudugu/SIRA?targetFile=requirements.txt)
+[![Known Vulnerabilities][(https://snyk.io/test/github/dugudugu/SIRA/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/dugudugu/SIRA?targetFile=requirements.txt)
 <div align="center">
 	<a href="http://stichting-i-respect-animals.herokuapp.com/">
 	<img src="https://res.cloudinary.com/dbnahdjbc/image/upload/v1583088605/Milestone4%20SIRA/hero-image_nkscwz.jpg"/></a>
@@ -182,7 +182,7 @@ The most important part for this web application is that the donation button is 
 
 ## Automated Testing
 - Travis CI - [Travis CI](https://travis-ci.org/) is used to check if the code is being build and deployed correctly
-- Snyks - [Snyks](https://snyk.io/test/github/dugudugu/SIRA/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/dugudugu/SIRA?targetFile=requirements.txt) is used to check if there are any vulnerability in your requirements files
+- Snyks - [Snyks][(https://snyk.io/test/github/dugudugu/SIRA/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/dugudugu/SIRA?targetFile=requirements.txt) is used to check if there are any vulnerability in your requirements files
 
 ### Known Issues
 Altough Travis CI is showing a result of passing, Snyks is picking up a vulnerability in the version of Pillow. To resolve this Pillow needs to be upgraded from version 5.4.1 to 6.2.0; by making this upgrade Travis testing will fail, because it does not recognize version 6.2.0 of Pillow.
