@@ -6,7 +6,7 @@ Snyk [![Known Vulnerabilities](https://snyk.io/test/github/dugudugu/SIRA/badge.s
 </div>
 
 <div align="center">
-# Stichting I Respect Animals (SIRA)
+<h1> Stichting I Respect Animals (SIRA)</h1>
 
 SIRA is a non-profit organization that help with the placement of resuce dogs at their forever home or foster home. SIRA works mainly with a rescue center in Spain know as [SPAC](http://spac.cat/), with the occasionally rescues in The Netherlands. With the help of the web application, you are able to *view and read information* reagarding dog adoption. You are also able to make a donation. As an administrator you will have the ability to *ADD, REMOVE and UPDATE dog entries.* 
 This application has been created to provide SIRA with working web application. 
@@ -263,17 +263,17 @@ This application is currently deployed on [Heroku](http://stichting-i-respect-an
 5. Set all *Enviroment Keys* in Heroku by doing the following steps:
     - In the *Settings* tab click on *Reveal Config Vars* button
     - Set the *KEY* and *VALUE* as following:
-		| Key					| Value 						|
-		| --------------------- | ----------------------------- |
-		| DISABLE_COLLECTSTATIC | 1								|
-		| SECRET_KEY			| ```<your secret key>```				|
-		| DATABASE_URL  		| <your postgres database url>  |
-		| AWS_SECRET_KEY_ID 	| <your secret key> 			|
-		| AWS_SECRET_ACCESS_KEY | <your secret key> 			|
-		| EMAIL_HOST_USER		| <your secret key> 			|
-		| EMAIL_HOST_PASSWORD	| <your secret key> 			|
-		| STRIPE_PUBLISHABLE	| <your secret key> 			|
-		| STRIPE_SECRET 		| <your secret key> 			|
+		| Key					| Value 							|
+		| --------------------- | --------------------------------- |
+		| DISABLE_COLLECTSTATIC | 1									|
+		| SECRET_KEY			| ```<your secret key>```			|
+		| DATABASE_URL  		| ```<your postgres database url>```|
+		| AWS_SECRET_KEY_ID 	| ```<your secret key>``` 			|
+		| AWS_SECRET_ACCESS_KEY | ```<your secret key>``` 			|
+		| EMAIL_HOST_USER		| ```<your secret key>``` 			|
+		| EMAIL_HOST_PASSWORD	| ```<your secret key>``` 			|
+		| STRIPE_PUBLISHABLE	| ```<your secret key>``` 			|
+		| STRIPE_SECRET 		| ```<your secret key>``` 			|
 	- To find the ```Postgres database url``` you must first add ```Postgres``` as an Add-on in the ```Resources``` tab in Heroku. Click on the Heroku Postgres and go to Settings, ere you wil be able to find the url
 6. For *Automatic Deployment* from GitHub follow the next steps:
     - In the *Deploy* tab Scroll down to *Apps connected to GitHub*
