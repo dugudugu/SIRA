@@ -266,7 +266,7 @@ This application is currently deployed on [Heroku](http://stichting-i-respect-an
 		| Key					| Value 						|
 		| --------------------- | ----------------------------- |
 		| DISABLE_COLLECTSTATIC | 1								|
-		| SECRET_KEY			| <your secret key> 			|
+		| SECRET_KEY			| "<your secret key>" 			|
 		| DATABASE_URL  		| <your postgres database url>  |
 		| AWS_SECRET_KEY_ID 	| <your secret key> 			|
 		| AWS_SECRET_ACCESS_KEY | <your secret key> 			|
@@ -305,6 +305,11 @@ I would like to give credits to the following:
 - Jeff Delaney: For the [Lazy loading images](https://fireship.io/snippets/intersection-observer-lazy-load-images/)
 - Jeremy Wagner: For [Using webp images](https://css-tricks.com/using-webp-images/)
 - Facebook Social Wall: [Walls.io](https://walls.io/)
+- Corey Schafer: [Django Tutorials](https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p)
+- Dennis Ivy: [Filter Form Search](https://www.youtube.com/watch?v=G-Rct7Na0UQ&t=10s)
+- Coding Entrepreneurs: [Django Emailing](https://www.youtube.com/watch?v=51mmqf5a0Ss)
+- Max Goodridge: [Django Tutorials](https://www.youtube.com/watch?v=Fc2O3_2kax8&list=PLw02n0FEB3E3VSHjyYMcFadtQORvl1Ssj)
+
 
 
 ### Images
