@@ -266,7 +266,7 @@ This application is currently deployed on [Heroku](http://stichting-i-respect-an
 		| Key					| Value 						|
 		| --------------------- | ----------------------------- |
 		| DISABLE_COLLECTSTATIC | 1								|
-		| SECRET_KEY			| "<your secret key>" 			|
+		| SECRET_KEY			| ```<your secret key>```				|
 		| DATABASE_URL  		| <your postgres database url>  |
 		| AWS_SECRET_KEY_ID 	| <your secret key> 			|
 		| AWS_SECRET_ACCESS_KEY | <your secret key> 			|
